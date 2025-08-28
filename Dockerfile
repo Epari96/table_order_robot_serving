@@ -33,9 +33,10 @@ RUN apt update && apt install -y \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-gazebo-ros2-control \
     ros-humble-gazebo-plugins \
-# navigation2 설치
-    ros-humble-nav2-map-server \
-    ros-humble-nav2-bringup \
+# turtlebot3-navigation2에 이미 설치되어 있음
+# # navigation2 설치
+#     ros-humble-nav2-map-server \
+#     ros-humble-nav2-bringup \
 # TurtleBot3 설치
     ros-humble-dynamixel-sdk \
     ros-humble-turtlebot3-gazebo \
