@@ -17,6 +17,7 @@ RUN apt update && apt install -y \
     curl \
     wget \
     nano \
+    gedit \
     fonts-nanum \
 # OpenGL 및 X11 관련 패키지
     libgl1-mesa-glx \
@@ -50,11 +51,12 @@ RUN rosdep update
 # 작업 디렉토리
 WORKDIR /workspace
 
-# 필요하면 ROS 환경 소스
+# ROS 환경 소스
 SHELL ["/bin/bash", "-c"]
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
-
+RUN echo "source /workspace/turtlebot3_ws/install/local_setup.bash" >> ~/.bashrc
+RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
 # 컨테이너 실행 시 기본 명령
 CMD ["bash"]
