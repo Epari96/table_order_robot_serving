@@ -1,3 +1,5 @@
+# version 0.03
+
 # 베이스 이미지
 FROM ros:humble-ros-base-jammy
 
@@ -29,6 +31,8 @@ RUN apt update && apt install -y \
     ros-humble-rqt-common-plugins \
     ros-humble-tf2-tools \
     python3-pyqt5 \
+    libxkbcommon-x11-0 \
+    libxcb-xinerama0 \
     ros-humble-rclpy \
 # Gazebo 설치
     ros-humble-gazebo-ros-pkgs \
@@ -51,12 +55,27 @@ RUN rosdep update
 # 작업 디렉토리
 WORKDIR /workspace
 
-# ROS 환경 소스
-SHELL ["/bin/bash", "-c"]
-RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
-RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
-RUN echo "source /workspace/turtlebot3_ws/install/local_setup.bash" >> ~/.bashrc
-RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+# 사용자 설정
+ARG USERNAME=humble
+ARG USER_UID=1000
+ARG USER_GID=1000
+RUN groupadd --gid ${USER_GID} ${USERNAME} \
+ && useradd -m -s /bin/bash --uid ${USER_UID} --gid ${USER_GID} ${USERNAME}
+
+# .bashrc는 root 권한으로 실행되므로, 모든 사용자에 대해 설정 적용
+# # ROS 환경 소스
+# SHELL ["/bin/bash", "-c"]
+# RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+# RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
+# RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
+# RUN echo "source /workspace/turtlebot3_ws/install/local_setup.bash" >> ~/.bashrc
+# RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+RUN bash -lc 'printf "%s\n" \
+  "source /opt/ros/humble/setup.bash" \
+  "export TURTLEBOT3_MODEL=waffle_pi" \
+  "export ROS_LOCALHOST_ONLY=0" \
+  "source /usr/share/gazebo/setup.sh" \
+  >> /etc/bash.bashrc'
+
 # 컨테이너 실행 시 기본 명령
 CMD ["bash"]
