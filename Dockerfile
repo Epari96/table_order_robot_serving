@@ -1,12 +1,9 @@
-# version 0.03
+# version 0.04 (desktop base)
 
-# 베이스 이미지
-FROM ros:humble-ros-base-jammy
-
-# 환경변수
+FROM osrf/ros:humble-desktop-jammy
 ENV DEBIAN_FRONTEND=noninteractive
 
-# 필수 패키지 설치
+# 필수/개발 유틸 + sudo(NOPASSWD) + PyQt5 + X11 의존성 + Gazebo/TB3
 RUN apt update && apt install -y \
     python3-pip \
     python3-colcon-common-extensions \
@@ -15,67 +12,40 @@ RUN apt update && apt install -y \
     python3-vcstool \
     lsb-release \
     build-essential \
-    git \
-    curl \
-    wget \
-    nano \
-    gedit \
-    fonts-nanum \
-# OpenGL 및 X11 관련 패키지
-    libgl1-mesa-glx \
-    libgl1-mesa-dri \
-    x11-apps \
-# ROS2 GUI 패키지 설치
-    ros-humble-rviz2 \
-    ros-humble-rqt \
-    ros-humble-rqt-common-plugins \
-    ros-humble-tf2-tools \
+    git curl wget nano gedit fonts-nanum \
     python3-pyqt5 \
-    libxkbcommon-x11-0 \
-    libxcb-xinerama0 \
-    ros-humble-rclpy \
-# Gazebo 설치
+    libxkbcommon-x11-0 libxcb-xinerama0 \
+    libgl1-mesa-glx libgl1-mesa-dri x11-apps \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-gazebo-ros2-control \
     ros-humble-gazebo-plugins \
-# turtlebot3-navigation2에 이미 설치되어 있음
-# # navigation2 설치
-#     ros-humble-nav2-map-server \
-#     ros-humble-nav2-bringup \
-# TurtleBot3 설치
     ros-humble-dynamixel-sdk \
     ros-humble-turtlebot3-gazebo \
     ros-humble-turtlebot3-navigation2 \
-    && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/*
 
 # rosdep 초기화
-RUN rosdep init || true
-RUN rosdep update
+RUN rosdep init || true && rosdep update
 
 # 작업 디렉토리
 WORKDIR /workspace
 
-# 사용자 설정
+# 사용자 생성(기본 1000:1000)
 ARG USERNAME=humble
 ARG USER_UID=1000
 ARG USER_GID=1000
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
  && useradd -m -s /bin/bash --uid ${USER_UID} --gid ${USER_GID} ${USERNAME}
 
-# .bashrc는 root 권한으로 실행되므로, 모든 사용자에 대해 설정 적용
-# # ROS 환경 소스
-# SHELL ["/bin/bash", "-c"]
-# RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-# RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
-# RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
-# RUN echo "source /workspace/turtlebot3_ws/install/local_setup.bash" >> ~/.bashrc
-# RUN echo "source /usr/share/gazebo/setup.sh" >> ~/.bashrc
+# 모든 인터랙티브 bash에서 ROS/Gazebo 환경 로드
 RUN bash -lc 'printf "%s\n" \
   "source /opt/ros/humble/setup.bash" \
   "export TURTLEBOT3_MODEL=waffle_pi" \
   "export ROS_LOCALHOST_ONLY=0" \
-  "source /usr/share/gazebo/setup.sh" \
+# Gazebo 및 TurtleBot3 워크스페이스가 존재하면 로드
+  "[ -f /usr/share/gazebo/setup.sh ] && source /usr/share/gazebo/setup.sh" \
+  "[ -f /workspace/turtlebot3_ws/install/local_setup.bash ] && source /workspace/turtlebot3_ws/install/local_setup.bash" \
   >> /etc/bash.bashrc'
 
-# 컨테이너 실행 시 기본 명령
+USER humble
 CMD ["bash"]
