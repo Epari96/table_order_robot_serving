@@ -1,4 +1,4 @@
-# version 0.04 (desktop base)
+# version 0.05 (sudo+nopassed)
 
 FROM osrf/ros:humble-desktop-jammy
 ENV DEBIAN_FRONTEND=noninteractive
@@ -34,8 +34,14 @@ WORKDIR /workspace
 ARG USERNAME=humble
 ARG USER_UID=1000
 ARG USER_GID=1000
-RUN groupadd --gid ${USER_GID} ${USERNAME} \
- && useradd -m -s /bin/bash --uid ${USER_UID} --gid ${USER_GID} ${USERNAME}
+RUN groupadd -g ${USER_GID} ${USERNAME} \
+ && useradd -m -u ${USER_UID} -g ${USER_GID} -s /bin/bash ${USERNAME}
+
+# sudo + NOPASSWD (최소 설정)
+RUN apt-get update && apt-get install -y sudo \
+ && printf "%s\n" "${USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/99-${USERNAME} \
+ && chmod 0440 /etc/sudoers.d/99-${USERNAME} \
+ && rm -rf /var/lib/apt/lists/*
 
 # 모든 인터랙티브 bash에서 ROS/Gazebo 환경 로드
 RUN bash -lc 'printf "%s\n" \
@@ -47,5 +53,6 @@ RUN bash -lc 'printf "%s\n" \
   "[ -f /workspace/turtlebot3_ws/install/local_setup.bash ] && source /workspace/turtlebot3_ws/install/local_setup.bash" \
   >> /etc/bash.bashrc'
 
-USER humble
+USER ${USERNAME}
+
 CMD ["bash"]

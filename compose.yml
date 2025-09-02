@@ -1,6 +1,6 @@
 services:
   ros2-gui:
-    image: ros-humble-tors:v0.03
+    image: ros-humble-tors:v0.05
     container_name: ros2_gui_tors
     user: "${UID:-1000}:${GID:-1000}"
     environment:

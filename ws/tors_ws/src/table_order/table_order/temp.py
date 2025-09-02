@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QTe
 from PyQt5.QtCore import QTimer
 import rclpy
 from rclpy.executors import MultiThreadedExecutor
-from git.ROKEY_Projects.advanced.table_order_robot_serving.ws.tors_ws.src.table_order.table_order.ros_node import ROSInterface
+from table_order.ros_node import ROSInterface
 from queue import Queue
 from threading import Thread
 
