@@ -1,0 +1,10 @@
+# request
+string table_id              # "T12"
+string client_order_id       # UUID from GUI (idempotency key)
+string items_json            # {"비빔밥":2,"물":1,"옵션":{"맵기":"보통"}}
+
+---
+# response
+bool   accepted              # 수락/거절
+string order_id              # 서버 발급 고유 ID (DB PK)
+string message               # 안내/사유(품절 등)

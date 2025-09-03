@@ -1,0 +1,17 @@
+[0.925s] Invoking command in '/workspace/tors_ws/build/pos_control': LD_LIBRARY_PATH=/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/workspace/tors_ws/build/pos_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/pos_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/pos_control/build --no-deps symlink_data
+[1.217s] running develop
+[1.370s] running egg_info
+[1.371s] writing pos_control.egg-info/PKG-INFO
+[1.371s] writing dependency_links to pos_control.egg-info/dependency_links.txt
+[1.371s] writing entry points to pos_control.egg-info/entry_points.txt
+[1.371s] writing requirements to pos_control.egg-info/requires.txt
+[1.371s] writing top-level names to pos_control.egg-info/top_level.txt
+[1.373s] reading manifest file 'pos_control.egg-info/SOURCES.txt'
+[1.374s] writing manifest file 'pos_control.egg-info/SOURCES.txt'
+[1.375s] running build_ext
+[1.375s] Creating /workspace/tors_ws/install/pos_control/lib/python3.10/site-packages/pos-control.egg-link (link to .)
+[1.376s] Installing pos_server script to /workspace/tors_ws/install/pos_control/lib/pos_control
+[1.377s] 
+[1.377s] Installed /workspace/tors_ws/build/pos_control
+[1.377s] running symlink_data
+[1.405s] Invoked command in '/workspace/tors_ws/build/pos_control' returned '0': LD_LIBRARY_PATH=/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/workspace/tors_ws/build/pos_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/pos_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/pos_control/build --no-deps symlink_data

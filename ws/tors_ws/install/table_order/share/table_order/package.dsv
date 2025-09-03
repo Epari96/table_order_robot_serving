@@ -1,0 +1,9 @@
+source;share/table_order/hook/pythonpath.ps1
+source;share/table_order/hook/pythonpath.dsv
+source;share/table_order/hook/pythonpath.sh
+source;share/table_order/hook/ament_prefix_path.ps1
+source;share/table_order/hook/ament_prefix_path.dsv
+source;share/table_order/hook/ament_prefix_path.sh
+source;../../build/table_order/share/table_order/hook/pythonpath_develop.ps1
+source;../../build/table_order/share/table_order/hook/pythonpath_develop.dsv
+source;../../build/table_order/share/table_order/hook/pythonpath_develop.sh

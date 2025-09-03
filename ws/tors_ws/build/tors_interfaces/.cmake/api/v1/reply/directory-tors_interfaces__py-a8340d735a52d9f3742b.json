@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "tors_interfaces__py",
+		"source" : "/workspace/tors_ws/build/tors_interfaces/tors_interfaces__py"
+	}
+}
