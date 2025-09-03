@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'pyqt_gui = table_order.pyqt_gui:main'
+            'table_gui = table_order.table_gui:main'
         ],
     },
 )

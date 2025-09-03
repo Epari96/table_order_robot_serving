@@ -1,0 +1,3 @@
+[console_scripts]
+pos_server = pos_control.pos_gui:main
+

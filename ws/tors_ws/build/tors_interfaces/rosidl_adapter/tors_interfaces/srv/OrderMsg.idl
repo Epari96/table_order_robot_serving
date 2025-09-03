@@ -1,0 +1,39 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from tors_interfaces/srv/OrderMsg.srv
+// generated code does not contain a copyright notice
+
+
+module tors_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "request")
+    struct OrderMsg_Request {
+      @verbatim (language="comment", text=
+        "\"T12\"")
+      string table_id;
+
+      @verbatim (language="comment", text=
+        "UUID from GUI (idempotency key)")
+      string client_order_id;
+
+      @verbatim (language="comment", text=
+        "{\"비빔밥\":2,\"물\":1,\"옵션\":{\"맵기\":\"보통\"}}")
+      string items_json;
+    };
+    @verbatim (language="comment", text=
+      "response")
+    struct OrderMsg_Response {
+      @verbatim (language="comment", text=
+        "수락/거절")
+      boolean accepted;
+
+      @verbatim (language="comment", text=
+        "서버 발급 고유 ID (DB PK)")
+      string order_id;
+
+      @verbatim (language="comment", text=
+        "안내/사유(품절 등)")
+      string message;
+    };
+  };
+};

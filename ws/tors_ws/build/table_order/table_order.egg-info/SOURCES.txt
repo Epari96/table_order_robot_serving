@@ -3,7 +3,8 @@ setup.cfg
 setup.py
 resource/table_order
 table_order/__init__.py
-table_order/temp.py
+table_order/ros_node.py
+table_order/table_gui.py
 table_order.egg-info/PKG-INFO
 table_order.egg-info/SOURCES.txt
 table_order.egg-info/dependency_links.txt

@@ -1,0 +1,342 @@
+[0.000000] (-) TimerEvent: {}
+[0.000429] (tors_interfaces) JobQueued: {'identifier': 'tors_interfaces', 'dependencies': OrderedDict()}
+[0.000701] (pos_control) JobQueued: {'identifier': 'pos_control', 'dependencies': OrderedDict([('tors_interfaces', '/workspace/tors_ws/install/tors_interfaces')])}
+[0.001208] (table_order) JobQueued: {'identifier': 'table_order', 'dependencies': OrderedDict([('tors_interfaces', '/workspace/tors_ws/install/tors_interfaces')])}
+[0.001333] (tors_interfaces) JobStarted: {'identifier': 'tors_interfaces'}
+[0.015138] (tors_interfaces) JobProgress: {'identifier': 'tors_interfaces', 'progress': 'cmake'}
+[0.015690] (tors_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/workspace/tors_ws/src/tors_interfaces', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/workspace/tors_ws/install/tors_interfaces'], 'cwd': '/workspace/tors_ws/build/tors_interfaces', 'env': OrderedDict([('HOSTNAME', 'epari-GS66'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/humble'), ('OLDPWD', '/workspace/tors_ws/src'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('PWD', '/workspace/tors_ws/build/tors_interfaces'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/workspace/turtlebot3_ws/build/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/workspace/turtlebot3_ws/build/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/workspace/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[0.037637] (tors_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.101224] (-) TimerEvent: {}
+[0.149608] (tors_interfaces) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.156922] (tors_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.159750] (tors_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.162586] (tors_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.189819] (tors_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.201364] (-) TimerEvent: {}
+[0.303221] (-) TimerEvent: {}
+[0.403510] (-) TimerEvent: {}
+[0.473189] (tors_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.503612] (-) TimerEvent: {}
+[0.603911] (-) TimerEvent: {}
+[0.694991] (tors_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.704038] (-) TimerEvent: {}
+[0.804349] (-) TimerEvent: {}
+[0.904678] (-) TimerEvent: {}
+[0.966261] (tors_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.989895] (tors_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[0.994408] (tors_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.004771] (-) TimerEvent: {}
+[1.030285] (tors_interfaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.030549] (tors_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.030657] (tors_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.030744] (tors_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.052382] (tors_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.099956] (tors_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.104878] (-) TimerEvent: {}
+[1.149324] (tors_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.151207] (tors_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.155500] (tors_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.187804] (tors_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[1.197620] (tors_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /workspace/tors_ws/build/tors_interfaces\n'}
+[1.208355] (tors_interfaces) CommandEnded: {'returncode': 0}
+[1.209013] (-) TimerEvent: {}
+[1.209134] (tors_interfaces) JobProgress: {'identifier': 'tors_interfaces', 'progress': 'build'}
+[1.209176] (tors_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/tors_ws/build/tors_interfaces', '--', '-j20', '-l20'], 'cwd': '/workspace/tors_ws/build/tors_interfaces', 'env': OrderedDict([('HOSTNAME', 'epari-GS66'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/humble'), ('OLDPWD', '/workspace/tors_ws/src'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('PWD', '/workspace/tors_ws/build/tors_interfaces'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/workspace/turtlebot3_ws/build/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/workspace/turtlebot3_ws/build/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/workspace/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[1.257736] (tors_interfaces) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.309121] (-) TimerEvent: {}
+[1.409412] (-) TimerEvent: {}
+[1.509701] (-) TimerEvent: {}
+[1.610040] (-) TimerEvent: {}
+[1.694059] (tors_interfaces) StdoutLine: {'line': b'[  3%] Built target tors_interfaces__cpp\n'}
+[1.710145] (-) TimerEvent: {}
+[1.727047] (tors_interfaces) StdoutLine: {'line': b'[  3%] Built target ament_cmake_python_symlink_tors_interfaces\n'}
+[1.739362] (tors_interfaces) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.810241] (-) TimerEvent: {}
+[1.910520] (-) TimerEvent: {}
+[2.010780] (-) TimerEvent: {}
+[2.077135] (tors_interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding CXX object CMakeFiles/tors_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tors_interfaces/srv/detail/order_msg__type_support.cpp.o\x1b[0m\n'}
+[2.110889] (-) TimerEvent: {}
+[2.214234] (-) TimerEvent: {}
+[2.315255] (-) TimerEvent: {}
+[2.415498] (-) TimerEvent: {}
+[2.516093] (-) TimerEvent: {}
+[2.523225] (tors_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32m\x1b[1mLinking CXX shared library libtors_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.589462] (tors_interfaces) StdoutLine: {'line': b'[ 12%] Built target tors_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[2.616199] (-) TimerEvent: {}
+[2.716469] (-) TimerEvent: {}
+[2.816771] (-) TimerEvent: {}
+[2.848080] (tors_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[2.848658] (tors_interfaces) StdoutLine: {'line': b'creating tors_interfaces.egg-info\n'}
+[2.848816] (tors_interfaces) StdoutLine: {'line': b'writing tors_interfaces.egg-info/PKG-INFO\n'}
+[2.848977] (tors_interfaces) StdoutLine: {'line': b'writing dependency_links to tors_interfaces.egg-info/dependency_links.txt\n'}
+[2.849231] (tors_interfaces) StdoutLine: {'line': b'writing top-level names to tors_interfaces.egg-info/top_level.txt\n'}
+[2.849370] (tors_interfaces) StdoutLine: {'line': b"writing manifest file 'tors_interfaces.egg-info/SOURCES.txt'\n"}
+[2.851463] (tors_interfaces) StdoutLine: {'line': b"reading manifest file 'tors_interfaces.egg-info/SOURCES.txt'\n"}
+[2.851926] (tors_interfaces) StdoutLine: {'line': b"writing manifest file 'tors_interfaces.egg-info/SOURCES.txt'\n"}
+[2.875047] (tors_interfaces) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_build_tors_interfaces_egg\n'}
+[2.885813] (tors_interfaces) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.916868] (-) TimerEvent: {}
+[3.017135] (-) TimerEvent: {}
+[3.117443] (-) TimerEvent: {}
+[3.217737] (-) TimerEvent: {}
+[3.263700] (tors_interfaces) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/tors_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tors_interfaces/srv/detail/dds_fastrtps/order_msg__type_support.cpp.o\x1b[0m\n'}
+[3.317841] (-) TimerEvent: {}
+[3.418132] (-) TimerEvent: {}
+[3.518440] (-) TimerEvent: {}
+[3.618771] (-) TimerEvent: {}
+[3.642934] (tors_interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32m\x1b[1mLinking CXX shared library libtors_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[3.709259] (tors_interfaces) StdoutLine: {'line': b'[ 22%] Built target tors_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[3.718875] (-) TimerEvent: {}
+[3.723542] (tors_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.818977] (-) TimerEvent: {}
+[3.919240] (-) TimerEvent: {}
+[4.019535] (-) TimerEvent: {}
+[4.074706] (tors_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tors_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tors_interfaces/srv/order_msg__type_support.cpp.o\x1b[0m\n'}
+[4.119651] (-) TimerEvent: {}
+[4.219954] (-) TimerEvent: {}
+[4.320243] (-) TimerEvent: {}
+[4.333402] (tors_interfaces) StdoutLine: {'line': b'[ 32%] \x1b[32m\x1b[1mLinking CXX shared library libtors_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[4.374192] (tors_interfaces) StdoutLine: {'line': b'[ 32%] Built target tors_interfaces__rosidl_typesupport_cpp\n'}
+[4.383806] (tors_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[4.420334] (-) TimerEvent: {}
+[4.520704] (-) TimerEvent: {}
+[4.620974] (-) TimerEvent: {}
+[4.721439] (-) TimerEvent: {}
+[4.736833] (tors_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tors_interfaces/srv/detail/order_msg__functions.c.o\x1b[0m\n'}
+[4.809417] (tors_interfaces) StdoutLine: {'line': b'[ 41%] \x1b[32m\x1b[1mLinking C shared library libtors_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[4.821533] (-) TimerEvent: {}
+[4.850723] (tors_interfaces) StdoutLine: {'line': b'[ 41%] Built target tors_interfaces__rosidl_generator_c\n'}
+[4.865989] (tors_interfaces) StdoutLine: {'line': b'[ 45%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.923214] (-) TimerEvent: {}
+[5.023562] (-) TimerEvent: {}
+[5.123921] (-) TimerEvent: {}
+[5.205264] (tors_interfaces) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/tors_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tors_interfaces/srv/detail/order_msg__type_support_c.cpp.o\x1b[0m\n'}
+[5.224039] (-) TimerEvent: {}
+[5.324351] (-) TimerEvent: {}
+[5.424654] (-) TimerEvent: {}
+[5.524974] (-) TimerEvent: {}
+[5.565202] (tors_interfaces) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libtors_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[5.625076] (-) TimerEvent: {}
+[5.634731] (tors_interfaces) StdoutLine: {'line': b'[ 51%] Built target tors_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[5.644318] (tors_interfaces) StdoutLine: {'line': b'[ 54%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.725181] (-) TimerEvent: {}
+[5.825455] (-) TimerEvent: {}
+[5.925738] (-) TimerEvent: {}
+[5.943367] (tors_interfaces) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_interfaces/srv/order_msg__type_support.cpp.o\x1b[0m\n'}
+[5.975480] (tors_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libtors_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[6.023243] (tors_interfaces) StdoutLine: {'line': b'[ 61%] Built target tors_interfaces__rosidl_typesupport_c\n'}
+[6.025827] (-) TimerEvent: {}
+[6.032964] (tors_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[6.125937] (-) TimerEvent: {}
+[6.226235] (-) TimerEvent: {}
+[6.326523] (-) TimerEvent: {}
+[6.363994] (tors_interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tors_interfaces/srv/detail/order_msg__type_support.c.o\x1b[0m\n'}
+[6.409103] (tors_interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking C shared library libtors_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[6.426631] (-) TimerEvent: {}
+[6.441887] (tors_interfaces) StdoutLine: {'line': b'[ 70%] Built target tors_interfaces__rosidl_typesupport_introspection_c\n'}
+[6.472312] (tors_interfaces) StdoutLine: {'line': b'[ 70%] Built target tors_interfaces\n'}
+[6.492973] (tors_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[6.526740] (-) TimerEvent: {}
+[6.627045] (-) TimerEvent: {}
+[6.727333] (-) TimerEvent: {}
+[6.831510] (-) TimerEvent: {}
+[6.931839] (-) TimerEvent: {}
+[7.032157] (-) TimerEvent: {}
+[7.038535] (tors_interfaces) StdoutLine: {'line': b'[ 74%] Built target tors_interfaces__py\n'}
+[7.058561] (tors_interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o\x1b[0m\n'}
+[7.132236] (-) TimerEvent: {}
+[7.197311] (tors_interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[7.233480] (-) TimerEvent: {}
+[7.244697] (tors_interfaces) StdoutLine: {'line': b'[ 80%] Built target tors_interfaces__rosidl_generator_py\n'}
+[7.266007] (tors_interfaces) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[7.333587] (-) TimerEvent: {}
+[7.376651] (tors_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tors_interfaces/tors_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.408559] (tors_interfaces) StdoutLine: {'line': b'[ 87%] Built target tors_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[7.428243] (tors_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[7.433670] (-) TimerEvent: {}
+[7.519541] (tors_interfaces) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tors_interfaces/tors_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.533784] (-) TimerEvent: {}
+[7.557715] (tors_interfaces) StdoutLine: {'line': b'[ 93%] Built target tors_interfaces__rosidl_typesupport_c__pyext\n'}
+[7.587291] (tors_interfaces) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding C object CMakeFiles/tors_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[7.633899] (-) TimerEvent: {}
+[7.698852] (tors_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tors_interfaces/tors_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[7.733866] (tors_interfaces) StdoutLine: {'line': b'[100%] Built target tors_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[7.734065] (-) TimerEvent: {}
+[7.748766] (tors_interfaces) CommandEnded: {'returncode': 0}
+[7.749078] (tors_interfaces) JobProgress: {'identifier': 'tors_interfaces', 'progress': 'install'}
+[7.761246] (tors_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/tors_ws/build/tors_interfaces'], 'cwd': '/workspace/tors_ws/build/tors_interfaces', 'env': OrderedDict([('HOSTNAME', 'epari-GS66'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/humble'), ('OLDPWD', '/workspace/tors_ws/src'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/turtlebot3_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/models:'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/opt/ros/humble'), ('DEBIAN_FRONTEND', 'noninteractive'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('PWD', '/workspace/tors_ws/build/tors_interfaces'), ('TURTLEBOT3_MODEL', 'waffle_pi'), ('LC_ALL', 'C.UTF-8'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('PYTHONPATH', '/workspace/turtlebot3_ws/build/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/workspace/turtlebot3_ws/build/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/workspace/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble')]), 'shell': False}
+[7.771886] (tors_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.772757] (tors_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[7.773104] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/ament_index/resource_index/rosidl_interfaces/tors_interfaces\n'}
+[7.783924] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[7.793184] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__functions.h\n'}
+[7.803791] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__struct.h\n'}
+[7.814310] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__type_support.h\n'}
+[7.823659] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/order_msg.h\n'}
+[7.833061] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/library_path.sh\n'}
+[7.834150] (-) TimerEvent: {}
+[7.844649] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/library_path.dsv\n'}
+[7.853420] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[7.862087] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__rosidl_typesupport_fastrtps_c.h\n'}
+[7.871642] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[7.880311] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__rosidl_typesupport_introspection_c.h\n'}
+[7.888285] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[7.896487] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__builder.hpp\n'}
+[7.904836] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__struct.hpp\n'}
+[7.912747] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__traits.hpp\n'}
+[7.924285] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__type_support.hpp\n'}
+[7.931128] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/order_msg.hpp\n'}
+[7.934212] (-) TimerEvent: {}
+[7.941120] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[7.950288] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[7.959700] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/include/tors_interfaces/tors_interfaces/srv/detail/order_msg__rosidl_typesupport_introspection_cpp.hpp\n'}
+[7.968825] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/pythonpath.sh\n'}
+[7.978282] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/pythonpath.dsv\n'}
+[7.988323] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[7.997067] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[8.007037] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[8.016140] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[8.025691] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/__init__.py\n'}
+[8.034323] (-) TimerEvent: {}
+[8.035105] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[8.046758] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[8.057900] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/_tors_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[8.068084] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/libtors_interfaces__rosidl_generator_py.so\n'}
+[8.077148] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv/__init__.py\n'}
+[8.086323] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv/_order_msg.py\n'}
+[8.095217] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv/_order_msg_s.c\n'}
+[8.104575] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.114808] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.124687] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.134427] (-) TimerEvent: {}
+[8.137305] (tors_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.137588] (tors_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.137853] (tors_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/tors_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[8.138087] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/srv/OrderMsg.idl\n'}
+[8.147545] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/srv/OrderMsg.srv\n'}
+[8.157257] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/srv/OrderMsg_Request.msg\n'}
+[8.166870] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/srv/OrderMsg_Response.msg\n'}
+[8.176281] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/ament_index/resource_index/package_run_dependencies/tors_interfaces\n'}
+[8.185597] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/ament_index/resource_index/parent_prefix_path/tors_interfaces\n'}
+[8.193972] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/ament_prefix_path.sh\n'}
+[8.203191] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/ament_prefix_path.dsv\n'}
+[8.212017] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/path.sh\n'}
+[8.221096] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/environment/path.dsv\n'}
+[8.230079] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/local_setup.bash\n'}
+[8.234525] (-) TimerEvent: {}
+[8.240142] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/local_setup.sh\n'}
+[8.248949] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/local_setup.zsh\n'}
+[8.261686] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/local_setup.dsv\n'}
+[8.271104] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/package.dsv\n'}
+[8.279948] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/ament_index/resource_index/packages/tors_interfaces\n'}
+[8.288717] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[8.298405] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[8.307898] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[8.316633] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[8.325510] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[8.334087] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[8.334615] (-) TimerEvent: {}
+[8.343144] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[8.351637] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfacesConfig.cmake\n'}
+[8.360867] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfacesConfig-version.cmake\n'}
+[8.373700] (tors_interfaces) StdoutLine: {'line': b'-- Symlinking: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/package.xml\n'}
+[8.383512] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_generator_c.so\n'}
+[8.383934] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_generator_c.so" to ""\n'}
+[8.384062] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[8.384475] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[8.384646] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[8.384948] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[8.385068] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_c.so\n'}
+[8.385384] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[8.385509] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[8.385919] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[8.386036] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[8.386438] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[8.386951] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_cpp.so\n'}
+[8.387098] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[8.434721] (-) TimerEvent: {}
+[8.439621] (tors_interfaces) StdoutLine: {'line': b"Listing '/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces'...\n"}
+[8.439803] (tors_interfaces) StdoutLine: {'line': b"Compiling '/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/__init__.py'...\n"}
+[8.439905] (tors_interfaces) StdoutLine: {'line': b"Listing '/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv'...\n"}
+[8.439981] (tors_interfaces) StdoutLine: {'line': b"Compiling '/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv/__init__.py'...\n"}
+[8.440054] (tors_interfaces) StdoutLine: {'line': b"Compiling '/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages/tors_interfaces/srv/_order_msg.py'...\n"}
+[8.444723] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_generator_py.so\n'}
+[8.445178] (tors_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/workspace/tors_ws/install/tors_interfaces/lib/libtors_interfaces__rosidl_generator_py.so" to ""\n'}
+[8.445319] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_generator_cExport.cmake\n'}
+[8.445528] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[8.445732] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[8.445920] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[8.446118] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[8.446307] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[8.446494] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[8.446670] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[8.446857] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_generator_cppExport.cmake\n'}
+[8.447034] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[8.447212] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[8.447397] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[8.447565] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[8.447747] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[8.447921] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/tors_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[8.448106] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_generator_pyExport.cmake\n'}
+[8.448284] (tors_interfaces) StdoutLine: {'line': b'-- Installing: /workspace/tors_ws/install/tors_interfaces/share/tors_interfaces/cmake/export_tors_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[8.454202] (tors_interfaces) CommandEnded: {'returncode': 0}
+[8.481546] (tors_interfaces) JobEnded: {'identifier': 'tors_interfaces', 'rc': 0}
+[8.482205] (pos_control) JobStarted: {'identifier': 'pos_control'}
+[8.490093] (table_order) JobStarted: {'identifier': 'table_order'}
+[8.534825] (-) TimerEvent: {}
+[8.635113] (-) TimerEvent: {}
+[8.735485] (-) TimerEvent: {}
+[8.835765] (-) TimerEvent: {}
+[8.941345] (-) TimerEvent: {}
+[9.041637] (-) TimerEvent: {}
+[9.141934] (-) TimerEvent: {}
+[9.242224] (-) TimerEvent: {}
+[9.342496] (-) TimerEvent: {}
+[9.432282] (table_order) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/workspace/tors_ws/build/table_order/build', '--no-deps', 'symlink_data'], 'cwd': '/workspace/tors_ws/build/table_order', 'env': {'HOSTNAME': 'epari-GS66', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins', 'HOME': '/home/humble', 'OLDPWD': '/workspace/tors_ws/src', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/turtlebot3_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/tors_ws/install/tors_interfaces:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'PWD': '/workspace/tors_ws/build/table_order', 'TURTLEBOT3_MODEL': 'waffle_pi', 'LC_ALL': 'C.UTF-8', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'PYTHONPATH': '/workspace/tors_ws/build/table_order/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/table_order/lib/python3.10/site-packages:/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages:/workspace/turtlebot3_ws/build/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/workspace/turtlebot3_ws/build/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/workspace/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/tors_ws/install/tors_interfaces:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer'}, 'shell': False}
+[9.435746] (pos_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/workspace/tors_ws/build/pos_control/build', '--no-deps', 'symlink_data'], 'cwd': '/workspace/tors_ws/build/pos_control', 'env': {'HOSTNAME': 'epari-GS66', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins', 'HOME': '/home/humble', 'OLDPWD': '/workspace/tors_ws/src', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/turtlebot3_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/models:', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/tors_ws/install/tors_interfaces:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11:', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'PWD': '/workspace/tors_ws/build/pos_control', 'TURTLEBOT3_MODEL': 'waffle_pi', 'LC_ALL': 'C.UTF-8', 'GAZEBO_PLUGIN_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:', 'PYTHONPATH': '/workspace/tors_ws/build/pos_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/pos_control/lib/python3.10/site-packages:/workspace/tors_ws/install/tors_interfaces/local/lib/python3.10/dist-packages:/workspace/turtlebot3_ws/build/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_teleop/lib/python3.10/site-packages:/workspace/turtlebot3_ws/build/turtlebot3_example:/workspace/turtlebot3_ws/install/turtlebot3_example/lib/python3.10/site-packages:/workspace/turtlebot3_ws/install/turtlebot3_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/workspace/tors_ws/install/tors_interfaces:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer'}, 'shell': False}
+[9.442562] (-) TimerEvent: {}
+[9.542779] (-) TimerEvent: {}
+[9.643031] (-) TimerEvent: {}
+[9.696166] (table_order) StdoutLine: {'line': b'running develop\n'}
+[9.719547] (pos_control) StdoutLine: {'line': b'running develop\n'}
+[9.743136] (-) TimerEvent: {}
+[9.829613] (table_order) StdoutLine: {'line': b'running egg_info\n'}
+[9.829850] (table_order) StdoutLine: {'line': b'writing table_order.egg-info/PKG-INFO\n'}
+[9.830001] (table_order) StdoutLine: {'line': b'writing dependency_links to table_order.egg-info/dependency_links.txt\n'}
+[9.830144] (table_order) StdoutLine: {'line': b'writing entry points to table_order.egg-info/entry_points.txt\n'}
+[9.830278] (table_order) StdoutLine: {'line': b'writing requirements to table_order.egg-info/requires.txt\n'}
+[9.830390] (table_order) StdoutLine: {'line': b'writing top-level names to table_order.egg-info/top_level.txt\n'}
+[9.831895] (table_order) StdoutLine: {'line': b"reading manifest file 'table_order.egg-info/SOURCES.txt'\n"}
+[9.833634] (table_order) StdoutLine: {'line': b"writing manifest file 'table_order.egg-info/SOURCES.txt'\n"}
+[9.839365] (table_order) StdoutLine: {'line': b'running build_ext\n'}
+[9.839554] (table_order) StdoutLine: {'line': b'Creating /workspace/tors_ws/install/table_order/lib/python3.10/site-packages/table-order.egg-link (link to .)\n'}
+[9.840439] (table_order) StdoutLine: {'line': b'Installing pyqt_gui script to /workspace/tors_ws/install/table_order/lib/table_order\n'}
+[9.840707] (table_order) StdoutLine: {'line': b'\n'}
+[9.840801] (table_order) StdoutLine: {'line': b'Installed /workspace/tors_ws/build/table_order\n'}
+[9.840913] (table_order) StdoutLine: {'line': b'running symlink_data\n'}
+[9.843202] (-) TimerEvent: {}
+[9.851125] (pos_control) StdoutLine: {'line': b'running egg_info\n'}
+[9.851341] (pos_control) StdoutLine: {'line': b'creating pos_control.egg-info\n'}
+[9.851504] (pos_control) StdoutLine: {'line': b'writing pos_control.egg-info/PKG-INFO\n'}
+[9.851736] (pos_control) StdoutLine: {'line': b'writing dependency_links to pos_control.egg-info/dependency_links.txt\n'}
+[9.851877] (pos_control) StdoutLine: {'line': b'writing entry points to pos_control.egg-info/entry_points.txt\n'}
+[9.851974] (pos_control) StdoutLine: {'line': b'writing requirements to pos_control.egg-info/requires.txt\n'}
+[9.852068] (pos_control) StdoutLine: {'line': b'writing top-level names to pos_control.egg-info/top_level.txt\n'}
+[9.852162] (pos_control) StdoutLine: {'line': b"writing manifest file 'pos_control.egg-info/SOURCES.txt'\n"}
+[9.853288] (pos_control) StdoutLine: {'line': b"reading manifest file 'pos_control.egg-info/SOURCES.txt'\n"}
+[9.853864] (pos_control) StdoutLine: {'line': b"writing manifest file 'pos_control.egg-info/SOURCES.txt'\n"}
+[9.855366] (pos_control) StdoutLine: {'line': b'running build_ext\n'}
+[9.855564] (pos_control) StdoutLine: {'line': b'Creating /workspace/tors_ws/install/pos_control/lib/python3.10/site-packages/pos-control.egg-link (link to .)\n'}
+[9.856310] (pos_control) StdoutLine: {'line': b'\n'}
+[9.856414] (pos_control) StdoutLine: {'line': b'Installed /workspace/tors_ws/build/pos_control\n'}
+[9.856534] (pos_control) StdoutLine: {'line': b'running symlink_data\n'}
+[9.856682] (pos_control) StdoutLine: {'line': b'creating /workspace/tors_ws/install/pos_control/share/ament_index\n'}
+[9.856761] (pos_control) StdoutLine: {'line': b'creating /workspace/tors_ws/install/pos_control/share/ament_index/resource_index\n'}
+[9.856836] (pos_control) StdoutLine: {'line': b'creating /workspace/tors_ws/install/pos_control/share/ament_index/resource_index/packages\n'}
+[9.856908] (pos_control) StdoutLine: {'line': b'symbolically linking /workspace/tors_ws/build/pos_control/resource/pos_control -> /workspace/tors_ws/install/pos_control/share/ament_index/resource_index/packages\n'}
+[9.856987] (pos_control) StdoutLine: {'line': b'symbolically linking /workspace/tors_ws/build/pos_control/package.xml -> /workspace/tors_ws/install/pos_control/share/pos_control\n'}
+[9.865366] (table_order) CommandEnded: {'returncode': 0}
+[9.875881] (table_order) JobEnded: {'identifier': 'table_order', 'rc': 0}
+[9.885248] (pos_control) CommandEnded: {'returncode': 0}
+[9.891179] (pos_control) JobEnded: {'identifier': 'pos_control', 'rc': 0}
+[9.895548] (-) EventReactorShutdown: {}
