@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TableOrderWindow</class>
+ <widget class="QMainWindow" name="TableOrderWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>665</width>
+    <height>692</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Table Order</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="mainLayout">
+    <item>
+     <layout class="QVBoxLayout" name="menuLayout">
+      <item>
+       <widget class="QGroupBox" name="groupBox_jjajang">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="groupLayout_jjajang">
+         <item>
+          <layout class="QVBoxLayout" name="groupLeftLayout_jjajang">
+           <item>
+            <widget class="QLabel" name="imageLabel_jjajang">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="pixmap">
+              <pixmap>짜장면.jpg</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="itemLabel_jjajang">
+             <property name="text">
+              <string>짜장면</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="groupRightLayout_jjajang">
+           <item>
+            <widget class="QLabel" name="costLabel_jjajang">
+             <property name="text">
+              <string>Cost: 8000</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="qtyLayout_jjajang">
+             <item>
+              <widget class="QLabel" name="quantityLabel_jjajang">
+               <property name="text">
+                <string>Quantity: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="minusButton_jjajang">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="plusButton_jjajang">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="addLayout_jjajang">
+             <item>
+              <widget class="QLabel" name="sumCostLabel_jjajang">
+               <property name="text">
+                <string>Sum Cost: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addButton_jjajang">
+               <property name="text">
+                <string>담기</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_jjamppong">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="groupLayout_jjamppong">
+         <item>
+          <layout class="QVBoxLayout" name="groupLeftLayout_jjamppong">
+           <item>
+            <widget class="QLabel" name="imageLabel_jjamppong">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="pixmap">
+              <pixmap>짬뽕.jpg</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="itemLabel_jjamppong">
+             <property name="text">
+              <string>짬뽕</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="groupRightLayout_jjamppong">
+           <item>
+            <widget class="QLabel" name="costLabel_jjamppong">
+             <property name="text">
+              <string>Cost: 8500</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="qtyLayout_jjamppong">
+             <item>
+              <widget class="QLabel" name="quantityLabel_jjamppong">
+               <property name="text">
+                <string>Quantity: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="minusButton_jjamppong">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="plusButton_jjamppong">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="addLayout_jjamppong">
+             <item>
+              <widget class="QLabel" name="sumCostLabel_jjamppong">
+               <property name="text">
+                <string>Sum Cost: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addButton_jjamppong">
+               <property name="text">
+                <string>담기</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_tangsuyuk">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="groupLayout_tangsuyuk">
+         <item>
+          <layout class="QVBoxLayout" name="groupLeftLayout_tangsuyuk">
+           <item>
+            <widget class="QLabel" name="imageLabel_tangsuyuk">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="pixmap">
+              <pixmap>탕수육.jpg</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="itemLabel_tangsuyuk">
+             <property name="text">
+              <string>탕수육</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="groupRightLayout_tangsuyuk">
+           <item>
+            <widget class="QLabel" name="costLabel_tangsuyuk">
+             <property name="text">
+              <string>Cost: 20000</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="qtyLayout_tangsuyuk">
+             <item>
+              <widget class="QLabel" name="quantityLabel_tangsuyuk">
+               <property name="text">
+                <string>Quantity: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="minusButton_tangsuyuk">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="plusButton_tangsuyuk">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="addLayout_tangsuyuk">
+             <item>
+              <widget class="QLabel" name="sumCostLabel_tangsuyuk">
+               <property name="text">
+                <string>Sum Cost: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addButton_tangsuyuk">
+               <property name="text">
+                <string>담기</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_zeroCola">
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="groupLayout_zeroCola">
+         <item>
+          <layout class="QVBoxLayout" name="groupLeftLayout_zeroCola">
+           <item>
+            <widget class="QLabel" name="imageLabel_zeroCola">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="pixmap">
+              <pixmap>제로 콜라.jpg</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="itemLabel_zeroCola">
+             <property name="text">
+              <string>제로 콜라</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="groupRightLayout_zeroCola">
+           <item>
+            <widget class="QLabel" name="costLabel_zeroCola">
+             <property name="text">
+              <string>Cost: 3000</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="qtyLayout_zeroCola">
+             <item>
+              <widget class="QLabel" name="quantityLabel_zeroCola">
+               <property name="text">
+                <string>Quantity: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="minusButton_zeroCola">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="plusButton_zeroCola">
+               <property name="text">
+                <string>+</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="addLayout_zeroCola">
+             <item>
+              <widget class="QLabel" name="sumCostLabel_zeroCola">
+               <property name="text">
+                <string>Sum Cost: 0</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="addButton_zeroCola">
+               <property name="text">
+                <string>담기</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="orderLayout">
+      <item>
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollContent">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>252</width>
+           <height>563</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_scroll"/>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="totalCostLabel">
+        <property name="text">
+         <string>Total Cost: 0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="buttonLayout">
+        <item>
+         <widget class="QPushButton" name="waiterButton">
+          <property name="text">
+           <string>직원
+호출</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="confirmReceiptButton">
+          <property name="text">
+           <string>수령완료</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="orderButton">
+          <property name="text">
+           <string>주문</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
