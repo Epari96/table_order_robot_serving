@@ -1,4 +1,4 @@
-# main.py
+
 import sys
 from PyQt5 import QtWidgets
 from menu_item_widget import TableOrderWindow

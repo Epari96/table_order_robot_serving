@@ -21,15 +21,15 @@ namespace srv
 namespace builder
 {
 
-class Init_OrderMsg_Request_items_json
+class Init_OrderMsg_Request_items
 {
 public:
-  explicit Init_OrderMsg_Request_items_json(::tors_interfaces::srv::OrderMsg_Request & msg)
+  explicit Init_OrderMsg_Request_items(::tors_interfaces::srv::OrderMsg_Request & msg)
   : msg_(msg)
   {}
-  ::tors_interfaces::srv::OrderMsg_Request items_json(::tors_interfaces::srv::OrderMsg_Request::_items_json_type arg)
+  ::tors_interfaces::srv::OrderMsg_Request items(::tors_interfaces::srv::OrderMsg_Request::_items_type arg)
   {
-    msg_.items_json = std::move(arg);
+    msg_.items = std::move(arg);
     return std::move(msg_);
   }
 
@@ -43,10 +43,10 @@ public:
   explicit Init_OrderMsg_Request_client_order_id(::tors_interfaces::srv::OrderMsg_Request & msg)
   : msg_(msg)
   {}
-  Init_OrderMsg_Request_items_json client_order_id(::tors_interfaces::srv::OrderMsg_Request::_client_order_id_type arg)
+  Init_OrderMsg_Request_items client_order_id(::tors_interfaces::srv::OrderMsg_Request::_client_order_id_type arg)
   {
     msg_.client_order_id = std::move(arg);
-    return Init_OrderMsg_Request_items_json(msg_);
+    return Init_OrderMsg_Request_items(msg_);
   }
 
 private:
@@ -111,32 +111,16 @@ private:
   ::tors_interfaces::srv::OrderMsg_Response msg_;
 };
 
-class Init_OrderMsg_Response_order_id
-{
-public:
-  explicit Init_OrderMsg_Response_order_id(::tors_interfaces::srv::OrderMsg_Response & msg)
-  : msg_(msg)
-  {}
-  Init_OrderMsg_Response_message order_id(::tors_interfaces::srv::OrderMsg_Response::_order_id_type arg)
-  {
-    msg_.order_id = std::move(arg);
-    return Init_OrderMsg_Response_message(msg_);
-  }
-
-private:
-  ::tors_interfaces::srv::OrderMsg_Response msg_;
-};
-
 class Init_OrderMsg_Response_accepted
 {
 public:
   Init_OrderMsg_Response_accepted()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_OrderMsg_Response_order_id accepted(::tors_interfaces::srv::OrderMsg_Response::_accepted_type arg)
+  Init_OrderMsg_Response_message accepted(::tors_interfaces::srv::OrderMsg_Response::_accepted_type arg)
   {
     msg_.accepted = std::move(arg);
-    return Init_OrderMsg_Response_order_id(msg_);
+    return Init_OrderMsg_Response_message(msg_);
   }
 
 private:

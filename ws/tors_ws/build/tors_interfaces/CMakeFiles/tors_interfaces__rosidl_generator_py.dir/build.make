@@ -69,10 +69,24 @@ include CMakeFiles/tors_interfaces__rosidl_generator_py.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tors_interfaces__rosidl_generator_py.dir/flags.make
 
+CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/flags.make
+CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o: rosidl_generator_py/tors_interfaces/msg/_order_item_s.c
+CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o -MF CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o.d -o CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o -c /workspace/tors_ws/build/tors_interfaces/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c
+
+CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /workspace/tors_ws/build/tors_interfaces/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c > CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.i
+
+CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /workspace/tors_ws/build/tors_interfaces/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c -o CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.s
+
 CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/flags.make
 CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o: rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c
 CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o -MF CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o.d -o CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o -c /workspace/tors_ws/build/tors_interfaces/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c
 
 CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.i: cmake_force
@@ -85,11 +99,13 @@ CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_int
 
 # Object files for target tors_interfaces__rosidl_generator_py
 tors_interfaces__rosidl_generator_py_OBJECTS = \
+"CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o" \
 "CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o"
 
 # External object files for target tors_interfaces__rosidl_generator_py
 tors_interfaces__rosidl_generator_py_EXTERNAL_OBJECTS =
 
+rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/msg/_order_item_s.c.o
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/rosidl_generator_py/tors_interfaces/srv/_order_msg_s.c.o
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/build.make
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: /usr/lib/x86_64-linux-gnu/libpython3.10.so
@@ -98,7 +114,7 @@ rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: 
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: /opt/ros/humble/lib/librcutils.so
 rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so: CMakeFiles/tors_interfaces__rosidl_generator_py.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C shared library rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C shared library rosidl_generator_py/tors_interfaces/libtors_interfaces__rosidl_generator_py.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tors_interfaces__rosidl_generator_py.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

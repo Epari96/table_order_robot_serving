@@ -42,6 +42,10 @@ class Metaclass_OrderMsg_Request(type):
             cls._TYPE_SUPPORT = module.type_support_msg__srv__order_msg__request
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__srv__order_msg__request
 
+            from tors_interfaces.msg import OrderItem
+            if OrderItem.__class__._TYPE_SUPPORT is None:
+                OrderItem.__class__.__import_type_support__()
+
     @classmethod
     def __prepare__(cls, name, bases, **kwargs):
         # list constant names here so that they appear in the help text of
@@ -57,28 +61,28 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
     __slots__ = [
         '_table_id',
         '_client_order_id',
-        '_items_json',
+        '_items',
     ]
 
     _fields_and_field_types = {
-        'table_id': 'string',
+        'table_id': 'int32',
         'client_order_id': 'string',
-        'items_json': 'string',
+        'items': 'sequence<tors_interfaces/OrderItem>',
     }
 
     SLOT_TYPES = (
+        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
-        rosidl_parser.definition.UnboundedString(),  # noqa: E501
-        rosidl_parser.definition.UnboundedString(),  # noqa: E501
+        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['tors_interfaces', 'msg'], 'OrderItem')),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.table_id = kwargs.get('table_id', str())
+        self.table_id = kwargs.get('table_id', int())
         self.client_order_id = kwargs.get('client_order_id', str())
-        self.items_json = kwargs.get('items_json', str())
+        self.items = kwargs.get('items', [])
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -113,7 +117,7 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
             return False
         if self.client_order_id != other.client_order_id:
             return False
-        if self.items_json != other.items_json:
+        if self.items != other.items:
             return False
         return True
 
@@ -131,8 +135,10 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
     def table_id(self, value):
         if __debug__:
             assert \
-                isinstance(value, str), \
-                "The 'table_id' field must be of type 'str'"
+                isinstance(value, int), \
+                "The 'table_id' field must be of type 'int'"
+            assert value >= -2147483648 and value < 2147483648, \
+                "The 'table_id' field must be an integer in [-2147483648, 2147483647]"
         self._table_id = value
 
     @builtins.property
@@ -149,17 +155,28 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
         self._client_order_id = value
 
     @builtins.property
-    def items_json(self):
-        """Message field 'items_json'."""
-        return self._items_json
+    def items(self):
+        """Message field 'items'."""
+        return self._items
 
-    @items_json.setter
-    def items_json(self, value):
+    @items.setter
+    def items(self, value):
         if __debug__:
+            from tors_interfaces.msg import OrderItem
+            from collections.abc import Sequence
+            from collections.abc import Set
+            from collections import UserList
+            from collections import UserString
             assert \
-                isinstance(value, str), \
-                "The 'items_json' field must be of type 'str'"
-        self._items_json = value
+                ((isinstance(value, Sequence) or
+                  isinstance(value, Set) or
+                  isinstance(value, UserList)) and
+                 not isinstance(value, str) and
+                 not isinstance(value, UserString) and
+                 all(isinstance(v, OrderItem) for v in value) and
+                 True), \
+                "The 'items' field must be a set or sequence and each value of type 'OrderItem'"
+        self._items = value
 
 
 # Import statements for member types
@@ -217,19 +234,16 @@ class OrderMsg_Response(metaclass=Metaclass_OrderMsg_Response):
 
     __slots__ = [
         '_accepted',
-        '_order_id',
         '_message',
     ]
 
     _fields_and_field_types = {
         'accepted': 'boolean',
-        'order_id': 'string',
         'message': 'string',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.UnboundedString(),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
@@ -238,7 +252,6 @@ class OrderMsg_Response(metaclass=Metaclass_OrderMsg_Response):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.accepted = kwargs.get('accepted', bool())
-        self.order_id = kwargs.get('order_id', str())
         self.message = kwargs.get('message', str())
 
     def __repr__(self):
@@ -272,8 +285,6 @@ class OrderMsg_Response(metaclass=Metaclass_OrderMsg_Response):
             return False
         if self.accepted != other.accepted:
             return False
-        if self.order_id != other.order_id:
-            return False
         if self.message != other.message:
             return False
         return True
@@ -295,19 +306,6 @@ class OrderMsg_Response(metaclass=Metaclass_OrderMsg_Response):
                 isinstance(value, bool), \
                 "The 'accepted' field must be of type 'bool'"
         self._accepted = value
-
-    @builtins.property
-    def order_id(self):
-        """Message field 'order_id'."""
-        return self._order_id
-
-    @order_id.setter
-    def order_id(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, str), \
-                "The 'order_id' field must be of type 'str'"
-        self._order_id = value
 
     @builtins.property
     def message(self):

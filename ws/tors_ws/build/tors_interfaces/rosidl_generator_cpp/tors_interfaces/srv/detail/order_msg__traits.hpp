@@ -14,6 +14,10 @@
 #include "tors_interfaces/srv/detail/order_msg__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
+// Include directives for member types
+// Member 'items'
+#include "tors_interfaces/msg/detail/order_item__traits.hpp"
+
 namespace tors_interfaces
 {
 
@@ -39,10 +43,21 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: items_json
+  // member: items
   {
-    out << "items_json: ";
-    rosidl_generator_traits::value_to_yaml(msg.items_json, out);
+    if (msg.items.size() == 0) {
+      out << "items: []";
+    } else {
+      out << "items: [";
+      size_t pending_items = msg.items.size();
+      for (auto item : msg.items) {
+        to_flow_style_yaml(item, out);
+        if (--pending_items > 0) {
+          out << ", ";
+        }
+      }
+      out << "]";
+    }
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -71,14 +86,23 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: items_json
+  // member: items
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "items_json: ";
-    rosidl_generator_traits::value_to_yaml(msg.items_json, out);
-    out << "\n";
+    if (msg.items.size() == 0) {
+      out << "items: []\n";
+    } else {
+      out << "items:\n";
+      for (auto item : msg.items) {
+        if (indentation > 0) {
+          out << std::string(indentation, ' ');
+        }
+        out << "-\n";
+        to_block_style_yaml(item, out, indentation + 2);
+      }
+    }
   }
 }  // NOLINT(readability/fn_size)
 
@@ -158,13 +182,6 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: order_id
-  {
-    out << "order_id: ";
-    rosidl_generator_traits::value_to_yaml(msg.order_id, out);
-    out << ", ";
-  }
-
   // member: message
   {
     out << "message: ";
@@ -184,16 +201,6 @@ inline void to_block_style_yaml(
     }
     out << "accepted: ";
     rosidl_generator_traits::value_to_yaml(msg.accepted, out);
-    out << "\n";
-  }
-
-  // member: order_id
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    out << "order_id: ";
-    rosidl_generator_traits::value_to_yaml(msg.order_id, out);
     out << "\n";
   }
 

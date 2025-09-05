@@ -3,6 +3,7 @@
   "output_dir": "/workspace/tors_ws/build/tors_interfaces/rosidl_generator_py/tors_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_generator_py/cmake/../resource",
   "idl_tuples": [
+    "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces:msg/OrderItem.idl",
     "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces:srv/OrderMsg.idl"
   ],
   "target_dependencies": [
@@ -19,6 +20,7 @@
     "/opt/ros/humble/share/rosidl_generator_py/cmake/../resource/_msg.py.em",
     "/opt/ros/humble/share/rosidl_generator_py/cmake/../resource/_srv_pkg_typesupport_entry_point.c.em",
     "/opt/ros/humble/share/rosidl_generator_py/cmake/../resource/_srv.py.em",
+    "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/msg/OrderItem.idl",
     "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/srv/OrderMsg.idl"
   ]
 }

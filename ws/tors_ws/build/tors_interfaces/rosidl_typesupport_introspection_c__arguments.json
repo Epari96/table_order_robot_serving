@@ -3,6 +3,7 @@
   "output_dir": "/workspace/tors_ws/build/tors_interfaces/rosidl_typesupport_introspection_c/tors_interfaces",
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource",
   "idl_tuples": [
+    "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces:msg/OrderItem.idl",
     "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces:srv/OrderMsg.idl"
   ],
   "target_dependencies": [
@@ -14,6 +15,7 @@
     "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/msg__type_support.c.em",
     "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__rosidl_typesupport_introspection_c.h.em",
     "/opt/ros/humble/share/rosidl_typesupport_introspection_c/resource/srv__type_support.c.em",
+    "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/msg/OrderItem.idl",
     "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/srv/OrderMsg.idl"
   ]
 }

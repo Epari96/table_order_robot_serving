@@ -16,6 +16,30 @@
 
 
 // forward declaration of message dependencies and their conversion functions
+namespace tors_interfaces
+{
+namespace msg
+{
+namespace typesupport_fastrtps_cpp
+{
+bool cdr_serialize(
+  const tors_interfaces::msg::OrderItem &,
+  eprosima::fastcdr::Cdr &);
+bool cdr_deserialize(
+  eprosima::fastcdr::Cdr &,
+  tors_interfaces::msg::OrderItem &);
+size_t get_serialized_size(
+  const tors_interfaces::msg::OrderItem &,
+  size_t current_alignment);
+size_t
+max_serialized_size_OrderItem(
+  bool & full_bounded,
+  bool & is_plain,
+  size_t current_alignment);
+}  // namespace typesupport_fastrtps_cpp
+}  // namespace msg
+}  // namespace tors_interfaces
+
 
 namespace tors_interfaces
 {
@@ -36,8 +60,16 @@ cdr_serialize(
   cdr << ros_message.table_id;
   // Member: client_order_id
   cdr << ros_message.client_order_id;
-  // Member: items_json
-  cdr << ros_message.items_json;
+  // Member: items
+  {
+    size_t size = ros_message.items.size();
+    cdr << static_cast<uint32_t>(size);
+    for (size_t i = 0; i < size; i++) {
+      tors_interfaces::msg::typesupport_fastrtps_cpp::cdr_serialize(
+        ros_message.items[i],
+        cdr);
+    }
+  }
   return true;
 }
 
@@ -53,8 +85,17 @@ cdr_deserialize(
   // Member: client_order_id
   cdr >> ros_message.client_order_id;
 
-  // Member: items_json
-  cdr >> ros_message.items_json;
+  // Member: items
+  {
+    uint32_t cdrSize;
+    cdr >> cdrSize;
+    size_t size = static_cast<size_t>(cdrSize);
+    ros_message.items.resize(size);
+    for (size_t i = 0; i < size; i++) {
+      tors_interfaces::msg::typesupport_fastrtps_cpp::cdr_deserialize(
+        cdr, ros_message.items[i]);
+    }
+  }
 
   return true;
 }
@@ -73,17 +114,28 @@ get_serialized_size(
   (void)wchar_size;
 
   // Member: table_id
-  current_alignment += padding +
-    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message.table_id.size() + 1);
+  {
+    size_t item_size = sizeof(ros_message.table_id);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // Member: client_order_id
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message.client_order_id.size() + 1);
-  // Member: items_json
-  current_alignment += padding +
-    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message.items_json.size() + 1);
+  // Member: items
+  {
+    size_t array_size = ros_message.items.size();
+
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+    for (size_t index = 0; index < array_size; ++index) {
+      current_alignment +=
+        tors_interfaces::msg::typesupport_fastrtps_cpp::get_serialized_size(
+        ros_message.items[index], current_alignment);
+    }
+  }
 
   return current_alignment - initial_alignment;
 }
@@ -112,13 +164,9 @@ max_serialized_size_OrderMsg_Request(
   {
     size_t array_size = 1;
 
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   // Member: client_order_id
@@ -134,16 +182,26 @@ max_serialized_size_OrderMsg_Request(
     }
   }
 
-  // Member: items_json
+  // Member: items
   {
-    size_t array_size = 1;
-
+    size_t array_size = 0;
     full_bounded = false;
     is_plain = false;
+    current_alignment += padding +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
+
+
+    last_member_size = 0;
     for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
+      bool inner_full_bounded;
+      bool inner_is_plain;
+      size_t inner_size =
+        tors_interfaces::msg::typesupport_fastrtps_cpp::max_serialized_size_OrderItem(
+        inner_full_bounded, inner_is_plain, current_alignment);
+      last_member_size += inner_size;
+      current_alignment += inner_size;
+      full_bounded &= inner_full_bounded;
+      is_plain &= inner_is_plain;
     }
   }
 
@@ -155,7 +213,7 @@ max_serialized_size_OrderMsg_Request(
     using DataType = tors_interfaces::srv::OrderMsg_Request;
     is_plain =
       (
-      offsetof(DataType, items_json) +
+      offsetof(DataType, items) +
       last_member_size
       ) == ret_val;
   }
@@ -293,8 +351,6 @@ cdr_serialize(
 {
   // Member: accepted
   cdr << (ros_message.accepted ? true : false);
-  // Member: order_id
-  cdr << ros_message.order_id;
   // Member: message
   cdr << ros_message.message;
   return true;
@@ -312,9 +368,6 @@ cdr_deserialize(
     cdr >> tmp;
     ros_message.accepted = tmp ? true : false;
   }
-
-  // Member: order_id
-  cdr >> ros_message.order_id;
 
   // Member: message
   cdr >> ros_message.message;
@@ -341,10 +394,6 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: order_id
-  current_alignment += padding +
-    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-    (ros_message.order_id.size() + 1);
   // Member: message
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
@@ -379,19 +428,6 @@ max_serialized_size_OrderMsg_Response(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
-  }
-
-  // Member: order_id
-  {
-    size_t array_size = 1;
-
-    full_bounded = false;
-    is_plain = false;
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += padding +
-        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
-        1;
-    }
   }
 
   // Member: message

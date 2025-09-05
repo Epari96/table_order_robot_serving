@@ -1,4 +1,5 @@
-# widget.py
+
+import json, uuid, re
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSignal, Qt
 from PyQt5.QtWidgets import (
@@ -109,6 +110,7 @@ class TableOrderWindow(QtWidgets.QMainWindow):
     waiterClicked = pyqtSignal()
     confirmReceiptClicked = pyqtSignal()
     orderClicked = pyqtSignal()
+    orderPayload = pyqtSignal(str, str, str)  # ← (table_id, client_order_id, items_json)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -259,11 +261,20 @@ class TableOrderWindow(QtWidgets.QMainWindow):
         self.update_total_cost()
 
     def finalize_order(self):
-        self.orderClicked.emit()  # 외부 알림(선택)
+        table_label = self.findChild(QLabel, "tableLabel")
+        table_id = self._extract_table_id(table_label.text() if table_label else "", default_id="T00")
+        client_order_id = str(uuid.uuid4())
+        items_dict = self.get_order_summary()  # {이름: 수량}
+        items_json = json.dumps(items_dict, ensure_ascii=False)
+
+        self.orderPayload.emit(table_id, client_order_id, items_json)
+        self.orderClicked.emit()
+
         for k, v in self.order_data.items():
             if v > 0:
                 self.order_history[k] += v
                 self.order_history_total += v * self.cost[k]
+
         self._clear_order_cards()
         self.order_data = {i: 0 for i in self.items}
         self.update_total_cost()
@@ -283,3 +294,10 @@ class TableOrderWindow(QtWidgets.QMainWindow):
         else:
             text = "\n".join(lines) + f"\n\n총 합계: ₩{self.order_history_total:,}"
         QMessageBox.information(self, "주문내역", text)
+    
+    def _extract_table_id(self, label_text: str, default_id: str = "T00") -> str:
+        m = re.search(r'(\d+)', label_text or "")
+        return f"T{m.group(1)}" if m else default_id
+    
+    def get_order_summary(self) -> dict:
+        return {k: v for k, v in getattr(self, "order_data", {}).items() if v > 0}
