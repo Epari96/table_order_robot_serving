@@ -148,13 +148,13 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>451</width>
+          <width>512</width>
           <height>61</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="Layout_TableSelect">
          <item>
-          <widget class="QPushButton" name="btnCtrlTable1">
+          <widget class="QPushButton" name="btnStatusTable1">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -172,7 +172,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnCtrlTable2">
+          <widget class="QPushButton" name="btnStatusTable2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -190,7 +190,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnCtrlTable3">
+          <widget class="QPushButton" name="btnStatusTable3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -208,7 +208,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnCtrlTable4">
+          <widget class="QPushButton" name="btnStatusTable4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -226,7 +226,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnCtrlTable5">
+          <widget class="QPushButton" name="btnStatusTable5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -244,7 +244,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="btnCtrlTable6">
+          <widget class="QPushButton" name="btnStatusTable6">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -464,7 +464,7 @@
         </property>
         <layout class="QGridLayout" name="Layout_RobotGoal">
          <item row="0" column="1">
-          <widget class="QPushButton" name="btnRobotGoal2">
+          <widget class="QPushButton" name="btnCtrlTable2">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -477,7 +477,7 @@
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QPushButton" name="btnRobotGoal4">
+          <widget class="QPushButton" name="btnCtrlTable4">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -490,7 +490,7 @@
           </widget>
          </item>
          <item row="0" column="0">
-          <widget class="QPushButton" name="btnRobotGoal1">
+          <widget class="QPushButton" name="btnCtrlTable1">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -503,7 +503,7 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QPushButton" name="btnRobotGoal3">
+          <widget class="QPushButton" name="btnCtrlTable3">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -516,7 +516,7 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QPushButton" name="btnRobotGoal5">
+          <widget class="QPushButton" name="btnCtrlTable5">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
@@ -529,7 +529,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QPushButton" name="btnRobotGoal6">
+          <widget class="QPushButton" name="btnCtrlTable6">
            <property name="sizePolicy">
             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
              <horstretch>0</horstretch>
