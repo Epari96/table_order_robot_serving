@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_interfaces/msg/order_item__type_support.cpp.o"
+  "CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_interfaces/msg/order_item__type_support.cpp.o.d"
   "CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_interfaces/srv/order_msg__type_support.cpp.o"
   "CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_interfaces/srv/order_msg__type_support.cpp.o.d"
   "libtors_interfaces__rosidl_typesupport_c.pdb"
   "libtors_interfaces__rosidl_typesupport_c.so"
+  "rosidl_typesupport_c/tors_interfaces/msg/order_item__type_support.cpp"
   "rosidl_typesupport_c/tors_interfaces/srv/order_msg__type_support.cpp"
 )
 

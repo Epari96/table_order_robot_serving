@@ -13,10 +13,12 @@
 
 
 // Include directives for member types
-// Member `table_id`
 // Member `client_order_id`
-// Member `items_json`
 #include "rosidl_runtime_c/string_functions.h"
+// Member `items`
+#include "tors_interfaces/msg/order_item.h"
+// Member `items`
+#include "tors_interfaces/msg/detail/order_item__rosidl_typesupport_introspection_c.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -37,10 +39,65 @@ void tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c_
   tors_interfaces__srv__OrderMsg_Request__fini(message_memory);
 }
 
+size_t tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__size_function__OrderMsg_Request__items(
+  const void * untyped_member)
+{
+  const tors_interfaces__msg__OrderItem__Sequence * member =
+    (const tors_interfaces__msg__OrderItem__Sequence *)(untyped_member);
+  return member->size;
+}
+
+const void * tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_const_function__OrderMsg_Request__items(
+  const void * untyped_member, size_t index)
+{
+  const tors_interfaces__msg__OrderItem__Sequence * member =
+    (const tors_interfaces__msg__OrderItem__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void * tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_function__OrderMsg_Request__items(
+  void * untyped_member, size_t index)
+{
+  tors_interfaces__msg__OrderItem__Sequence * member =
+    (tors_interfaces__msg__OrderItem__Sequence *)(untyped_member);
+  return &member->data[index];
+}
+
+void tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__fetch_function__OrderMsg_Request__items(
+  const void * untyped_member, size_t index, void * untyped_value)
+{
+  const tors_interfaces__msg__OrderItem * item =
+    ((const tors_interfaces__msg__OrderItem *)
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_const_function__OrderMsg_Request__items(untyped_member, index));
+  tors_interfaces__msg__OrderItem * value =
+    (tors_interfaces__msg__OrderItem *)(untyped_value);
+  *value = *item;
+}
+
+void tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__assign_function__OrderMsg_Request__items(
+  void * untyped_member, size_t index, const void * untyped_value)
+{
+  tors_interfaces__msg__OrderItem * item =
+    ((tors_interfaces__msg__OrderItem *)
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_function__OrderMsg_Request__items(untyped_member, index));
+  const tors_interfaces__msg__OrderItem * value =
+    (const tors_interfaces__msg__OrderItem *)(untyped_value);
+  *item = *value;
+}
+
+bool tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__resize_function__OrderMsg_Request__items(
+  void * untyped_member, size_t size)
+{
+  tors_interfaces__msg__OrderItem__Sequence * member =
+    (tors_interfaces__msg__OrderItem__Sequence *)(untyped_member);
+  tors_interfaces__msg__OrderItem__Sequence__fini(member);
+  return tors_interfaces__msg__OrderItem__Sequence__init(member, size);
+}
+
 static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__OrderMsg_Request_message_member_array[3] = {
   {
     "table_id",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -73,21 +130,21 @@ static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__O
     NULL  // resize(index) function pointer
   },
   {
-    "items_json",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
+    "items",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_MESSAGE,  // type
     0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
+    NULL,  // members of sub message (initialized later)
+    true,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(tors_interfaces__srv__OrderMsg_Request, items_json),  // bytes offset in struct
+    offsetof(tors_interfaces__srv__OrderMsg_Request, items),  // bytes offset in struct
     NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__size_function__OrderMsg_Request__items,  // size() function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_const_function__OrderMsg_Request__items,  // get_const(index) function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__get_function__OrderMsg_Request__items,  // get(index) function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__fetch_function__OrderMsg_Request__items,  // fetch(index, &value) function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__assign_function__OrderMsg_Request__items,  // assign(index, value) function pointer
+    tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__resize_function__OrderMsg_Request__items  // resize(index) function pointer
   }
 };
 
@@ -112,6 +169,8 @@ static rosidl_message_type_support_t tors_interfaces__srv__OrderMsg_Request__ros
 ROSIDL_TYPESUPPORT_INTROSPECTION_C_EXPORT_tors_interfaces
 const rosidl_message_type_support_t *
 ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tors_interfaces, srv, OrderMsg_Request)() {
+  tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__OrderMsg_Request_message_member_array[2].members_ =
+    ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspection_c, tors_interfaces, msg, OrderItem)();
   if (!tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__OrderMsg_Request_message_type_support_handle.typesupport_identifier) {
     tors_interfaces__srv__OrderMsg_Request__rosidl_typesupport_introspection_c__OrderMsg_Request_message_type_support_handle.typesupport_identifier =
       rosidl_typesupport_introspection_c__identifier;
@@ -141,7 +200,6 @@ ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_introspecti
 
 
 // Include directives for member types
-// Member `order_id`
 // Member `message`
 // already included above
 // #include "rosidl_runtime_c/string_functions.h"
@@ -165,7 +223,7 @@ void tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c
   tors_interfaces__srv__OrderMsg_Response__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c__OrderMsg_Response_message_member_array[3] = {
+static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c__OrderMsg_Response_message_member_array[2] = {
   {
     "accepted",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -175,23 +233,6 @@ static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__O
     0,  // array size
     false,  // is upper bound
     offsetof(tors_interfaces__srv__OrderMsg_Response, accepted),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "order_id",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_STRING,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(tors_interfaces__srv__OrderMsg_Response, order_id),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -222,7 +263,7 @@ static rosidl_typesupport_introspection_c__MessageMember tors_interfaces__srv__O
 static const rosidl_typesupport_introspection_c__MessageMembers tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c__OrderMsg_Response_message_members = {
   "tors_interfaces__srv",  // message namespace
   "OrderMsg_Response",  // message name
-  3,  // number of fields
+  2,  // number of fields
   sizeof(tors_interfaces__srv__OrderMsg_Response),
   tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c__OrderMsg_Response_message_member_array,  // message members
   tors_interfaces__srv__OrderMsg_Response__rosidl_typesupport_introspection_c__OrderMsg_Response_init_function,  // function to initialize message memory (memory has to be allocated)

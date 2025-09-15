@@ -10,6 +10,12 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/resource', ['resource/TableOrder.ui']),
+        ('share/' + package_name + '/resource',
+        ['resource/짜장면.jpg',
+         'resource/짬뽕.jpg',
+         'resource/탕수육.jpg',
+         'resource/제로 콜라.jpg']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'table_gui = table_order.table_gui:main'
+            'table_gui = table_order.table_order:main'
         ],
     },
 )

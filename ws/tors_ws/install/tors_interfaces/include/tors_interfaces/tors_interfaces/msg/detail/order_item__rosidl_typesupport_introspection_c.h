@@ -1,0 +1,1 @@
+/workspace/tors_ws/build/tors_interfaces/rosidl_typesupport_introspection_c/tors_interfaces/msg/detail/order_item__rosidl_typesupport_introspection_c.h

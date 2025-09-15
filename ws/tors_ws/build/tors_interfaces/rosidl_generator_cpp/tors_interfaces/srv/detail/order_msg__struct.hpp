@@ -15,6 +15,10 @@
 #include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
+// Include directives for member types
+// Member 'items'
+#include "tors_interfaces/msg/detail/order_item__struct.hpp"
+
 #ifndef _WIN32
 # define DEPRECATED__tors_interfaces__srv__OrderMsg_Request __attribute__((deprecated))
 #else
@@ -38,40 +42,36 @@ struct OrderMsg_Request_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->table_id = "";
+      this->table_id = 0l;
       this->client_order_id = "";
-      this->items_json = "";
     }
   }
 
   explicit OrderMsg_Request_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : table_id(_alloc),
-    client_order_id(_alloc),
-    items_json(_alloc)
+  : client_order_id(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->table_id = "";
+      this->table_id = 0l;
       this->client_order_id = "";
-      this->items_json = "";
     }
   }
 
   // field types and members
   using _table_id_type =
-    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+    int32_t;
   _table_id_type table_id;
   using _client_order_id_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _client_order_id_type client_order_id;
-  using _items_json_type =
-    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _items_json_type items_json;
+  using _items_type =
+    std::vector<tors_interfaces::msg::OrderItem_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<tors_interfaces::msg::OrderItem_<ContainerAllocator>>>;
+  _items_type items;
 
   // setters for named parameter idiom
   Type & set__table_id(
-    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+    const int32_t & _arg)
   {
     this->table_id = _arg;
     return *this;
@@ -82,10 +82,10 @@ struct OrderMsg_Request_
     this->client_order_id = _arg;
     return *this;
   }
-  Type & set__items_json(
-    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
+  Type & set__items(
+    const std::vector<tors_interfaces::msg::OrderItem_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<tors_interfaces::msg::OrderItem_<ContainerAllocator>>> & _arg)
   {
-    this->items_json = _arg;
+    this->items = _arg;
     return *this;
   }
 
@@ -137,7 +137,7 @@ struct OrderMsg_Request_
     if (this->client_order_id != other.client_order_id) {
       return false;
     }
-    if (this->items_json != other.items_json) {
+    if (this->items != other.items) {
       return false;
     }
     return true;
@@ -183,20 +183,17 @@ struct OrderMsg_Response_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->accepted = false;
-      this->order_id = "";
       this->message = "";
     }
   }
 
   explicit OrderMsg_Response_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : order_id(_alloc),
-    message(_alloc)
+  : message(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->accepted = false;
-      this->order_id = "";
       this->message = "";
     }
   }
@@ -205,9 +202,6 @@ struct OrderMsg_Response_
   using _accepted_type =
     bool;
   _accepted_type accepted;
-  using _order_id_type =
-    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
-  _order_id_type order_id;
   using _message_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _message_type message;
@@ -217,12 +211,6 @@ struct OrderMsg_Response_
     const bool & _arg)
   {
     this->accepted = _arg;
-    return *this;
-  }
-  Type & set__order_id(
-    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
-  {
-    this->order_id = _arg;
     return *this;
   }
   Type & set__message(
@@ -275,9 +263,6 @@ struct OrderMsg_Response_
   bool operator==(const OrderMsg_Response_ & other) const
   {
     if (this->accepted != other.accepted) {
-      return false;
-    }
-    if (this->order_id != other.order_id) {
       return false;
     }
     if (this->message != other.message) {

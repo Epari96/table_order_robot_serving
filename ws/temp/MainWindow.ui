@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TableOrderWindow</class>
+ <widget class="QMainWindow" name="TableOrderWindow">
+  <property name="windowTitle">
+   <string>Table Order</string>
+  </property>
+  <!-- 좌우 스크롤이 생기지 않도록 최소 크기 -->
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>520</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <!-- 상단 테이블 라벨 + 본문(HBox) -->
+   <layout class="QVBoxLayout" name="rootLayout">
+    <!-- 상단: 테이블 번호(문구는 코드에서 변경) -->
+    <item>
+     <widget class="QLabel" name="tableLabel">
+      <property name="text">
+       <string>테이블 14</string>
+      </property>
+      <property name="font">
+        <font>
+          <pointsize>16</pointsize>   <!-- 글자 크기 -->
+          <bold>true</bold>           <!-- 굵게 여부 -->
+        </font>
+      </property>
+      <property name="alignment">
+        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <!-- 본문: 좌/우 -->
+    <item>
+     <layout class="QHBoxLayout" name="mainLayout">
+      <!-- 왼쪽: 메뉴 타이틀 + 스크롤 -->
+      <item>
+       <layout class="QVBoxLayout" name="leftPanelLayout">
+        <item>
+         <widget class="QLabel" name="menuTitleLabel">
+          <property name="text">
+           <string>메뉴</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="menuScrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <widget class="QWidget" name="menuScrollContent">
+           <layout class="QVBoxLayout" name="menuContainerLayout">
+            <!-- 동적 MenuItemWidget들이 여기 들어감 -->
+            <item>
+             <spacer name="menuSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <!-- 오른쪽: 장바구니 타이틀 + 스크롤 + 합계 + 버튼들 -->
+      <item>
+       <layout class="QVBoxLayout" name="rightPanelLayout">
+        <item>
+         <widget class="QLabel" name="cartTitleLabel">
+          <property name="text">
+           <string>장바구니</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QScrollArea" name="orderScrollArea">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <widget class="QWidget" name="orderScrollContent">
+           <layout class="QVBoxLayout" name="orderContainerLayout">
+            <!-- 동적 주문 카드가 여기 들어감 -->
+            <item>
+             <spacer name="orderSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="totalCostLabel">
+          <property name="text">
+           <string>Total Cost: 0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="bottomButtonLayout">
+          <item>
+           <widget class="QPushButton" name="waiterButton">
+            <property name="text">
+             <string>직원호출</string>
+            </property>
+            <property name="minimumHeight">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="historyButton">
+            <property name="text">
+             <string>주문내역</string>
+            </property>
+            <property name="minimumHeight">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="confirmReceiptButton">
+            <property name="text">
+             <string>수령완료</string>
+            </property>
+            <property name="minimumHeight">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="orderButton">
+            <property name="text">
+             <string>주문</string>
+            </property>
+            <property name="minimumHeight">
+             <number>60</number>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

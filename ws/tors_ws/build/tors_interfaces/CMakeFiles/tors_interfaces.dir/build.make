@@ -66,6 +66,7 @@ include CMakeFiles/tors_interfaces.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/tors_interfaces.dir/progress.make
 
+CMakeFiles/tors_interfaces: /workspace/tors_ws/src/tors_interfaces/msg/OrderItem.msg
 CMakeFiles/tors_interfaces: /workspace/tors_ws/src/tors_interfaces/srv/OrderMsg.srv
 CMakeFiles/tors_interfaces: rosidl_cmake/srv/OrderMsg_Request.msg
 CMakeFiles/tors_interfaces: rosidl_cmake/srv/OrderMsg_Response.msg

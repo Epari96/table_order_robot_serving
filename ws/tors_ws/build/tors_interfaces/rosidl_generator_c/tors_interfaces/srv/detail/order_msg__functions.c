@@ -11,10 +11,10 @@
 #include "rcutils/allocator.h"
 
 // Include directives for member types
-// Member `table_id`
 // Member `client_order_id`
-// Member `items_json`
 #include "rosidl_runtime_c/string_functions.h"
+// Member `items`
+#include "tors_interfaces/msg/detail/order_item__functions.h"
 
 bool
 tors_interfaces__srv__OrderMsg_Request__init(tors_interfaces__srv__OrderMsg_Request * msg)
@@ -23,17 +23,13 @@ tors_interfaces__srv__OrderMsg_Request__init(tors_interfaces__srv__OrderMsg_Requ
     return false;
   }
   // table_id
-  if (!rosidl_runtime_c__String__init(&msg->table_id)) {
-    tors_interfaces__srv__OrderMsg_Request__fini(msg);
-    return false;
-  }
   // client_order_id
   if (!rosidl_runtime_c__String__init(&msg->client_order_id)) {
     tors_interfaces__srv__OrderMsg_Request__fini(msg);
     return false;
   }
-  // items_json
-  if (!rosidl_runtime_c__String__init(&msg->items_json)) {
+  // items
+  if (!tors_interfaces__msg__OrderItem__Sequence__init(&msg->items, 0)) {
     tors_interfaces__srv__OrderMsg_Request__fini(msg);
     return false;
   }
@@ -47,11 +43,10 @@ tors_interfaces__srv__OrderMsg_Request__fini(tors_interfaces__srv__OrderMsg_Requ
     return;
   }
   // table_id
-  rosidl_runtime_c__String__fini(&msg->table_id);
   // client_order_id
   rosidl_runtime_c__String__fini(&msg->client_order_id);
-  // items_json
-  rosidl_runtime_c__String__fini(&msg->items_json);
+  // items
+  tors_interfaces__msg__OrderItem__Sequence__fini(&msg->items);
 }
 
 bool
@@ -61,9 +56,7 @@ tors_interfaces__srv__OrderMsg_Request__are_equal(const tors_interfaces__srv__Or
     return false;
   }
   // table_id
-  if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->table_id), &(rhs->table_id)))
-  {
+  if (lhs->table_id != rhs->table_id) {
     return false;
   }
   // client_order_id
@@ -72,9 +65,9 @@ tors_interfaces__srv__OrderMsg_Request__are_equal(const tors_interfaces__srv__Or
   {
     return false;
   }
-  // items_json
-  if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->items_json), &(rhs->items_json)))
+  // items
+  if (!tors_interfaces__msg__OrderItem__Sequence__are_equal(
+      &(lhs->items), &(rhs->items)))
   {
     return false;
   }
@@ -90,20 +83,16 @@ tors_interfaces__srv__OrderMsg_Request__copy(
     return false;
   }
   // table_id
-  if (!rosidl_runtime_c__String__copy(
-      &(input->table_id), &(output->table_id)))
-  {
-    return false;
-  }
+  output->table_id = input->table_id;
   // client_order_id
   if (!rosidl_runtime_c__String__copy(
       &(input->client_order_id), &(output->client_order_id)))
   {
     return false;
   }
-  // items_json
-  if (!rosidl_runtime_c__String__copy(
-      &(input->items_json), &(output->items_json)))
+  // items
+  if (!tors_interfaces__msg__OrderItem__Sequence__copy(
+      &(input->items), &(output->items)))
   {
     return false;
   }
@@ -291,7 +280,6 @@ tors_interfaces__srv__OrderMsg_Request__Sequence__copy(
 
 
 // Include directives for member types
-// Member `order_id`
 // Member `message`
 // already included above
 // #include "rosidl_runtime_c/string_functions.h"
@@ -303,11 +291,6 @@ tors_interfaces__srv__OrderMsg_Response__init(tors_interfaces__srv__OrderMsg_Res
     return false;
   }
   // accepted
-  // order_id
-  if (!rosidl_runtime_c__String__init(&msg->order_id)) {
-    tors_interfaces__srv__OrderMsg_Response__fini(msg);
-    return false;
-  }
   // message
   if (!rosidl_runtime_c__String__init(&msg->message)) {
     tors_interfaces__srv__OrderMsg_Response__fini(msg);
@@ -323,8 +306,6 @@ tors_interfaces__srv__OrderMsg_Response__fini(tors_interfaces__srv__OrderMsg_Res
     return;
   }
   // accepted
-  // order_id
-  rosidl_runtime_c__String__fini(&msg->order_id);
   // message
   rosidl_runtime_c__String__fini(&msg->message);
 }
@@ -337,12 +318,6 @@ tors_interfaces__srv__OrderMsg_Response__are_equal(const tors_interfaces__srv__O
   }
   // accepted
   if (lhs->accepted != rhs->accepted) {
-    return false;
-  }
-  // order_id
-  if (!rosidl_runtime_c__String__are_equal(
-      &(lhs->order_id), &(rhs->order_id)))
-  {
     return false;
   }
   // message
@@ -364,12 +339,6 @@ tors_interfaces__srv__OrderMsg_Response__copy(
   }
   // accepted
   output->accepted = input->accepted;
-  // order_id
-  if (!rosidl_runtime_c__String__copy(
-      &(input->order_id), &(output->order_id)))
-  {
-    return false;
-  }
   // message
   if (!rosidl_runtime_c__String__copy(
       &(input->message), &(output->message)))

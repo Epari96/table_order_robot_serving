@@ -1,4 +1,3 @@
-﻿// NOLINT: This file starts with a BOM since it contain non-ASCII characters
 // generated from rosidl_generator_c/resource/idl__struct.h.em
 // with input from tors_interfaces:srv/OrderMsg.idl
 // generated code does not contain a copyright notice
@@ -19,20 +18,17 @@ extern "C"
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'table_id'
 // Member 'client_order_id'
-// Member 'items_json'
 #include "rosidl_runtime_c/string.h"
+// Member 'items'
+#include "tors_interfaces/msg/detail/order_item__struct.h"
 
 /// Struct defined in srv/OrderMsg in the package tors_interfaces.
 typedef struct tors_interfaces__srv__OrderMsg_Request
 {
-  /// "T12"
-  rosidl_runtime_c__String table_id;
-  /// UUID from GUI (idempotency key)
+  int32_t table_id;
   rosidl_runtime_c__String client_order_id;
-  /// {"비빔밥":2,"물":1,"옵션":{"맵기":"보통"}}
-  rosidl_runtime_c__String items_json;
+  tors_interfaces__msg__OrderItem__Sequence items;
 } tors_interfaces__srv__OrderMsg_Request;
 
 // Struct for a sequence of tors_interfaces__srv__OrderMsg_Request.
@@ -49,7 +45,6 @@ typedef struct tors_interfaces__srv__OrderMsg_Request__Sequence
 // Constants defined in the message
 
 // Include directives for member types
-// Member 'order_id'
 // Member 'message'
 // already included above
 // #include "rosidl_runtime_c/string.h"
@@ -57,11 +52,7 @@ typedef struct tors_interfaces__srv__OrderMsg_Request__Sequence
 /// Struct defined in srv/OrderMsg in the package tors_interfaces.
 typedef struct tors_interfaces__srv__OrderMsg_Response
 {
-  /// 수락/거절
   bool accepted;
-  /// 서버 발급 고유 ID (DB PK)
-  rosidl_runtime_c__String order_id;
-  /// 안내/사유(품절 등)
   rosidl_runtime_c__String message;
 } tors_interfaces__srv__OrderMsg_Response;
 

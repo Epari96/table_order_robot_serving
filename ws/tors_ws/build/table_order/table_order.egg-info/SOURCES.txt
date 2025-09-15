@@ -1,10 +1,15 @@
 package.xml
 setup.cfg
 setup.py
+resource/TableOrder.ui
 resource/table_order
+resource/제로 콜라.jpg
+resource/짜장면.jpg
+resource/짬뽕.jpg
+resource/탕수육.jpg
 table_order/__init__.py
-table_order/ros_node.py
-table_order/table_gui.py
+table_order/table_gui_widget.py
+table_order/table_order.py
 table_order.egg-info/PKG-INFO
 table_order.egg-info/SOURCES.txt
 table_order.egg-info/dependency_links.txt

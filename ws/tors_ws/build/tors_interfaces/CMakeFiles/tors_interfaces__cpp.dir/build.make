@@ -66,6 +66,11 @@ include CMakeFiles/tors_interfaces__cpp.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/tors_interfaces__cpp.dir/progress.make
 
+CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__builder.hpp
+CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__struct.hpp
+CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__traits.hpp
+CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__type_support.hpp
 CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
 CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__builder.hpp
 CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__struct.hpp
@@ -73,38 +78,59 @@ CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail
 CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__type_support.hpp
 CMakeFiles/tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
 
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__builder.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__struct.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__traits.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__builder.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__struct.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__traits.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__builder.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__struct.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__traits.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__builder.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
-rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: rosidl_adapter/tors_interfaces/srv/OrderMsg.idl
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__builder.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__struct.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/action__traits.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__builder.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__struct.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/idl__traits.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__builder.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__struct.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/msg__traits.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__builder.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__struct.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: /opt/ros/humble/share/rosidl_generator_cpp/resource/srv__traits.hpp.em
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: rosidl_adapter/tors_interfaces/msg/OrderItem.idl
+rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp: rosidl_adapter/tors_interfaces/srv/OrderMsg.idl
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/workspace/tors_ws/build/tors_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code for ROS interfaces"
 	/usr/bin/python3 /opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp --generator-arguments-file /workspace/tors_ws/build/tors_interfaces/rosidl_generator_cpp__arguments.json
 
-rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__builder.hpp: rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
+rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__builder.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__builder.hpp
+
+rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__struct.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__struct.hpp
+
+rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__traits.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__traits.hpp
+
+rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__type_support.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__type_support.hpp
+
+rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
+
+rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__builder.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__builder.hpp
 
-rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__struct.hpp: rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
+rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__struct.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__struct.hpp
 
-rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__traits.hpp: rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
+rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__traits.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__traits.hpp
 
-rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__type_support.hpp: rosidl_generator_cpp/tors_interfaces/srv/order_msg.hpp
+rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__type_support.hpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__type_support.hpp
 
 tors_interfaces__cpp: CMakeFiles/tors_interfaces__cpp
+tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__builder.hpp
+tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__struct.hpp
+tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__traits.hpp
+tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__type_support.hpp
+tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/msg/order_item.hpp
 tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__builder.hpp
 tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__struct.hpp
 tors_interfaces__cpp: rosidl_generator_cpp/tors_interfaces/srv/detail/order_msg__traits.hpp

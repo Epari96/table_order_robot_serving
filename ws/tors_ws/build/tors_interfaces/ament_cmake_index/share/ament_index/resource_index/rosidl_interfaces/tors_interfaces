@@ -1,3 +1,5 @@
+msg/OrderItem.idl
+msg/OrderItem.msg
 srv/OrderMsg.idl
 srv/OrderMsg.srv
 srv/OrderMsg_Request.msg

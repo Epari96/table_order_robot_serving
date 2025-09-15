@@ -358,8 +358,14 @@ include("/workspace/tors_ws/build/tors_interfaces/ament_cmake_symlink_install_ta
 # install("TARGETS" "tors_interfaces__rosidl_typesupport_c__pyext" "DESTINATION" "local/lib/python3.10/dist-packages/tors_interfaces")
 include("/workspace/tors_ws/build/tors_interfaces/ament_cmake_symlink_install_targets_2_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
+# install(FILES "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/msg/OrderItem.idl" "DESTINATION" "share/tors_interfaces/msg")
+ament_cmake_symlink_install_files("/workspace/tors_ws/src/tors_interfaces" FILES "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/msg/OrderItem.idl" "DESTINATION" "share/tors_interfaces/msg")
+
 # install(FILES "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/srv/OrderMsg.idl" "DESTINATION" "share/tors_interfaces/srv")
 ament_cmake_symlink_install_files("/workspace/tors_ws/src/tors_interfaces" FILES "/workspace/tors_ws/build/tors_interfaces/rosidl_adapter/tors_interfaces/srv/OrderMsg.idl" "DESTINATION" "share/tors_interfaces/srv")
+
+# install(FILES "/workspace/tors_ws/src/tors_interfaces/msg/OrderItem.msg" "DESTINATION" "share/tors_interfaces/msg")
+ament_cmake_symlink_install_files("/workspace/tors_ws/src/tors_interfaces" FILES "/workspace/tors_ws/src/tors_interfaces/msg/OrderItem.msg" "DESTINATION" "share/tors_interfaces/msg")
 
 # install(FILES "/workspace/tors_ws/src/tors_interfaces/srv/OrderMsg.srv" "DESTINATION" "share/tors_interfaces/srv")
 ament_cmake_symlink_install_files("/workspace/tors_ws/src/tors_interfaces" FILES "/workspace/tors_ws/src/tors_interfaces/srv/OrderMsg.srv" "DESTINATION" "share/tors_interfaces/srv")

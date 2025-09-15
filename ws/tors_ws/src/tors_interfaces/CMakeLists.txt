@@ -11,6 +11,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 # 인터페이스 정의
 rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/OrderItem.msg"
   "srv/OrderMsg.srv"
 )
 
