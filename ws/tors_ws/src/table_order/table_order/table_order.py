@@ -119,10 +119,18 @@ def main():
     w.confirmReceiptClicked.connect(worker.sendConfirm)
     w.orderPayload.connect(worker.sendOrder)
 
-    # 로그
+    # 로그 -> 수락 / 거부 결과 전송
     worker.orderResult.connect(lambda ok,msg: print(f"[ORDER] {'OK' if ok else 'FAIL'}: {msg}"))
     worker.confirmResult.connect(lambda ok,msg: print(f"[CONFIRM] {'OK' if ok else 'FAIL'}: {msg}"))
     worker.rosLog.connect(lambda s: print(s))
+
+    # 주문 결과를 테이블 팝업 상태로 반영
+    def _map_order_result(ok: bool, msg: str):
+        # 예외/서비스 미가동 등은 'failed', 그 외 False는 'rejected'
+        status = "accepted" if ok else ("failed" if msg.startswith("오류:") or "미가동" in msg else "rejected")
+        w.finalize_order(status)
+
+    worker.orderResult.connect(_map_order_result)
 
     w.show(); code = app.exec_()
     worker.stop(); rclpy.shutdown(); sys.exit(code)

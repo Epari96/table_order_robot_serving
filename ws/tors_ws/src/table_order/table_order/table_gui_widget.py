@@ -104,10 +104,22 @@ class TableOrderWindow(QtWidgets.QMainWindow):
         if self.btn_history: self.btn_history.clicked.connect(self.show_order_history)
         if self.btn_waiter:  self.btn_waiter.clicked.connect(lambda: self.waiterClicked.emit(self.table_num))
         if self.btn_confirm: self.btn_confirm.clicked.connect(self.confirmReceiptClicked.emit)
-        if self.btn_order:   self.btn_order.clicked.connect(self.finalize_order)
+        if self.btn_order:   self.btn_order.clicked.connect(self._on_click_order)
 
         self.update_total_cost()
         self.setStyleSheet("""QGroupBox#orderCard { border:1px solid #D5D9DD; border-radius:8px; padding:6px; background:#FAFAFA;}""")
+
+    def _on_click_order(self):
+        """주문 버튼 클릭 → pending 팝업, payload 보관, ROS로 전송용 시그널 emit."""
+        items_dict = self.get_order_summary()
+        if not items_dict:
+            QMessageBox.information(self, "안내", "담긴 메뉴가 없습니다.")
+            return
+        client_order_id = str(uuid.uuid4())
+        # 1) pending 팝업(확인 비활성) + payload 보관
+        self.finalize_order("pending", payload={"items": items_dict, "client_order_id": client_order_id})
+        # 2) ROS로 보냄 (table_order.RosWorker.sendOrder에 연결되어 있어야 함)
+        self.orderPayload.emit(int(self.table_num), client_order_id, items_dict)
 
     def _insert_top(self, vlayout: QVBoxLayout, widget: QWidget):
         if not vlayout: return
@@ -162,15 +174,71 @@ class TableOrderWindow(QtWidgets.QMainWindow):
         else: qty_label.setText(f"수량: {self.order_data[item]}")
         self.update_total_cost()
 
-    def finalize_order(self):
-        client_order_id = str(uuid.uuid4())
-        items_dict = self.get_order_summary()  # {이름: 수량}
-        self.orderPayload.emit(int(self.table_num), client_order_id, items_dict)
-        self.orderClicked.emit()
-        for k, v in self.order_data.items():
+    # 주문 상태 팝업을 생성/갱신하는 헬퍼
+    def _update_order_popup(self, text: str, ok_enabled: bool):
+        from PyQt5.QtWidgets import QMessageBox
+        if not hasattr(self, "_pending_dialog"):
+            self._pending_dialog = None
+        if self._pending_dialog is None:
+            dlg = QMessageBox(self)
+            dlg.setWindowTitle("주문 상태")
+            dlg.setIcon(QMessageBox.Information)
+            dlg.setStandardButtons(QMessageBox.Ok)
+            dlg.setModal(True)
+            self._pending_dialog = dlg
+
+        self._pending_dialog.setText(text)
+        
+        ok_btn = self._pending_dialog.button(QMessageBox.Ok)
+        if ok_btn is not None:
+            ok_btn.setEnabled(ok_enabled)
+
+        if not self._pending_dialog.isVisible():
+            self._pending_dialog.show()
+
+
+    def finalize_order(self, status: str, payload=None):
+        if not hasattr(self, "_pending_order_payload"):
+            self._pending_order_payload = None
+
+        if status == "pending":
+            # payload: {"items": dict, "client_order_id": str}
+            self._pending_order_payload = payload or {}
+            self._update_order_popup("주문 접수 중", ok_enabled=False)
+            return
+
+        if status == "accepted":
+            self._update_order_popup("주문 접수 완료", ok_enabled=True)
+            try:
+                if self._pending_order_payload:
+                    items = self._pending_order_payload.get("items", {})
+                    self._apply_order_accept(items)
+            finally:
+                self._pending_order_payload = None
+            return
+
+        if status == "rejected":
+            self._update_order_popup("주문 취소됨", ok_enabled=True)
+            self._pending_order_payload = None
+            return
+
+        if status == "failed":
+            self._update_order_popup("주문 전송 실패", ok_enabled=True)
+            self._pending_order_payload = None
+            return
+        
+    def _apply_order_accept(self, items_dict: dict):
+        """수락 시점에만 주문내역 누적 + 카트 초기화 + 금액 갱신."""
+        if not items_dict:
+            return
+        # 내역 누적(히스토리)
+        for k, v in items_dict.items():
             if v > 0:
-                self.order_history[k] += v; self.order_history_total += v * self.cost[k]
-        self._clear_order_cards(); self.order_data = {i:0 for i in self.items}
+                self.order_history[k] = self.order_history.get(k, 0) + int(v)
+                self.order_history_total += int(v) * self.cost.get(k, 0)
+        # UI 카트 비우기
+        self._clear_order_cards()
+        self.order_data = {i: 0 for i in self.items}
         self.update_total_cost()
 
     def update_total_cost(self):
