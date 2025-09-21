@@ -8,7 +8,8 @@ import rclpy
 from rclpy.node import Node
 from rclpy.executors import MultiThreadedExecutor
 from nav2_msgs.action import NavigateToPose
-from std_msgs.msg import Int32, Bool
+from std_msgs.msg import Int32
+from std_srvs.srv import SetBool
 
 from tors_interfaces.srv import OrderMsg
 from pos_control.pos_gui_widget import PosGuiWidget
@@ -21,7 +22,7 @@ NAV_ACTION_NAME = "/navigate_to_pose"
 CMD_VEL_TOPIC   = "/cmd_vel"
 ORDER_SERVICE_NAME = "/pos/order_service"
 CALL_WAITER_TOPIC  = "/pos/call_waiter"        # Int32(table_no)
-CONFIRM_RECEIPT_TOPIC = "/pos/confirm_receipt" # Bool
+CONFIRM_RECEIPT_SERVICE = "/pos/confirm_receipt" # SetBool
 
 NAV_POINTS = {
     "tables": { 1:(1.0,2.0,0.0), 2:(2.0,2.0,0.0), 3:(3.0,2.0,0.0),
@@ -48,7 +49,7 @@ class RosWorker(QtCore.QThread):
             self.node.get_logger().error("Nav2 action server not available."); return
         with self._goal_lock:
             if self._current_goal_handle is not None:
-                try: self._action_client._cancel_goal_async(self._current_goal_handle)
+                try: self._current_goal_handle.cancel_goal_async()
                 except Exception: pass
 
             ps = PoseStamped(); ps.header.frame_id = "map"; ps.header.stamp = self.node.get_clock().now().to_msg()
@@ -105,7 +106,7 @@ class RosWorker(QtCore.QThread):
 
         self._srv = self.node.create_service(OrderMsg, ORDER_SERVICE_NAME, self._on_order_service)
         self._sub_call = self.node.create_subscription(Int32, CALL_WAITER_TOPIC, self._on_waiter_call, 10)
-        self._sub_confirm = self.node.create_subscription(Bool, CONFIRM_RECEIPT_TOPIC, self._on_confirm_receipt, 10)
+        self._srv_confirm = self.node.create_service(SetBool, CONFIRM_RECEIPT_SERVICE, self._on_confirm_service)
 
         self._goal_lock = threading.Lock()
         self._current_goal_handle = None; self._current_goal_key = None
@@ -123,7 +124,7 @@ class RosWorker(QtCore.QThread):
         except Exception as e:
             self.node.get_logger().error(f"get_result failed: {e}"); status = 0
         if status == 4: self.navStatus.emit("arrived", location_key)
-        elif status == 2: self.navStatus.emit("cancelled", location_key)
+        elif status == 6: self.navStatus.emit("cancelled", location_key)
         elif status == 5: self.navStatus.emit("aborted", location_key)
         else: self.navStatus.emit("stopped", location_key)
         self._current_goal_handle = None; self._current_goal_key = None
@@ -155,8 +156,14 @@ class RosWorker(QtCore.QThread):
     def _on_waiter_call(self, msg: Int32):
         self.waiterCall.emit(int(msg.data))
 
-    def _on_confirm_receipt(self, msg: Bool):
-        self.confirmReceipt.emit(bool(msg.data))
+    def _on_confirm_service(self, req: SetBool.Request, res: SetBool.Response):
+        try:
+            ok = bool(getattr(req, 'data', False))
+            self.confirmReceipt.emit(ok)
+            res.success = True; res.message = 'ok' if ok else 'cancel'
+        except Exception as e:
+            res.success = False; res.message = f'error: {e}'
+        return res
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
