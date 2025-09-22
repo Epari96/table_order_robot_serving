@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+dummy_nav2/__init__.py
+dummy_nav2/dummy_nav2_server.py
+dummy_nav2.egg-info/PKG-INFO
+dummy_nav2.egg-info/SOURCES.txt
+dummy_nav2.egg-info/dependency_links.txt
+dummy_nav2.egg-info/entry_points.txt
+dummy_nav2.egg-info/requires.txt
+dummy_nav2.egg-info/top_level.txt
+dummy_nav2.egg-info/zip-safe
+resource/dummy_nav2
