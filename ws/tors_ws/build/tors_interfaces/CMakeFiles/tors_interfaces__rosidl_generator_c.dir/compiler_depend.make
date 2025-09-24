@@ -135,7 +135,6 @@ CMakeFiles/tors_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tors_inter
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__struct.h \
   /usr/include/assert.h \
   /usr/include/string.h \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
@@ -156,8 +155,7 @@ CMakeFiles/tors_interfaces__rosidl_generator_c.dir/rosidl_generator_c/tors_inter
   /opt/ros/humble/include/rcutils/rcutils/visibility_control.h \
   /opt/ros/humble/include/rcutils/rcutils/visibility_control_macros.h \
   /opt/ros/humble/include/rcutils/rcutils/types/rcutils_ret.h \
-  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__functions.h
+  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h
 
 
 rosidl_generator_c/tors_interfaces/srv/detail/order_msg__functions.h:

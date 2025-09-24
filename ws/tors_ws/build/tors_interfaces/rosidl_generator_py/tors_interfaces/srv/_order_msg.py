@@ -42,10 +42,6 @@ class Metaclass_OrderMsg_Request(type):
             cls._TYPE_SUPPORT = module.type_support_msg__srv__order_msg__request
             cls._DESTROY_ROS_MESSAGE = module.destroy_ros_message_msg__srv__order_msg__request
 
-            from tors_interfaces.msg import OrderItem
-            if OrderItem.__class__._TYPE_SUPPORT is None:
-                OrderItem.__class__.__import_type_support__()
-
     @classmethod
     def __prepare__(cls, name, bases, **kwargs):
         # list constant names here so that they appear in the help text of
@@ -61,19 +57,19 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
     __slots__ = [
         '_table_id',
         '_client_order_id',
-        '_items',
+        '_items_json',
     ]
 
     _fields_and_field_types = {
         'table_id': 'int32',
         'client_order_id': 'string',
-        'items': 'sequence<tors_interfaces/OrderItem>',
+        'items_json': 'string',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.UnboundedString(),  # noqa: E501
-        rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.NamespacedType(['tors_interfaces', 'msg'], 'OrderItem')),  # noqa: E501
+        rosidl_parser.definition.UnboundedString(),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -82,7 +78,7 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.table_id = kwargs.get('table_id', int())
         self.client_order_id = kwargs.get('client_order_id', str())
-        self.items = kwargs.get('items', [])
+        self.items_json = kwargs.get('items_json', str())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -117,7 +113,7 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
             return False
         if self.client_order_id != other.client_order_id:
             return False
-        if self.items != other.items:
+        if self.items_json != other.items_json:
             return False
         return True
 
@@ -155,28 +151,17 @@ class OrderMsg_Request(metaclass=Metaclass_OrderMsg_Request):
         self._client_order_id = value
 
     @builtins.property
-    def items(self):
-        """Message field 'items'."""
-        return self._items
+    def items_json(self):
+        """Message field 'items_json'."""
+        return self._items_json
 
-    @items.setter
-    def items(self, value):
+    @items_json.setter
+    def items_json(self, value):
         if __debug__:
-            from tors_interfaces.msg import OrderItem
-            from collections.abc import Sequence
-            from collections.abc import Set
-            from collections import UserList
-            from collections import UserString
             assert \
-                ((isinstance(value, Sequence) or
-                  isinstance(value, Set) or
-                  isinstance(value, UserList)) and
-                 not isinstance(value, str) and
-                 not isinstance(value, UserString) and
-                 all(isinstance(v, OrderItem) for v in value) and
-                 True), \
-                "The 'items' field must be a set or sequence and each value of type 'OrderItem'"
-        self._items = value
+                isinstance(value, str), \
+                "The 'items_json' field must be of type 'str'"
+        self._items_json = value
 
 
 # Import statements for member types

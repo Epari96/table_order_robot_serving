@@ -2,7 +2,6 @@
 // with input from tors_interfaces/srv/OrderMsg.srv
 // generated code does not contain a copyright notice
 
-#include "tors_interfaces/msg/OrderItem.idl"
 
 module tors_interfaces {
   module srv {
@@ -13,7 +12,7 @@ module tors_interfaces {
 
       string client_order_id;
 
-      sequence<tors_interfaces::msg::OrderItem> items;
+      string items_json;
     };
     @verbatim (language="comment", text=
       "Response")

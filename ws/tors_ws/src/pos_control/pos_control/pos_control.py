@@ -131,16 +131,8 @@ class RosWorker(QtCore.QThread):
 
     def _on_order_service(self, req: OrderMsg.Request, res: OrderMsg.Response):
         import threading
-        # req.table_id: int, req.items: OrderItem[]
-        try:
-            items_dict = {getattr(it, 'name',''): int(getattr(it, 'quantity',0))
-                          for it in req.items if getattr(it,'name','')}
-        except Exception:
-            items_dict = {}
-            for it in getattr(req, 'items', []):
-                n = getattr(it,'name',''); q = getattr(it,'quantity',0)
-                if n: items_dict[n] = int(q) if isinstance(q,(int,float)) else 0
-        items_json = json.dumps(items_dict, ensure_ascii=False)
+        # req.items_json 사용
+        items_json = getattr(req, 'items_json', '')
 
         ev = threading.Event(); holder = {"accepted": False}
         self._pending_order[req.client_order_id] = (ev, holder)

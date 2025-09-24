@@ -19,14 +19,6 @@
 #include "rosidl_runtime_c/string.h"
 #include "rosidl_runtime_c/string_functions.h"
 
-#include "rosidl_runtime_c/primitives_sequence.h"
-#include "rosidl_runtime_c/primitives_sequence_functions.h"
-
-// Nested array functions includes
-#include "tors_interfaces/msg/detail/order_item__functions.h"
-// end nested array functions include
-bool tors_interfaces__msg__order_item__convert_from_py(PyObject * _pymsg, void * _ros_message);
-PyObject * tors_interfaces__msg__order_item__convert_to_py(void * raw_ros_message);
 
 ROSIDL_GENERATOR_C_EXPORT
 bool tors_interfaces__srv__order_msg__request__convert_from_py(PyObject * _pymsg, void * _ros_message)
@@ -85,37 +77,19 @@ bool tors_interfaces__srv__order_msg__request__convert_from_py(PyObject * _pymsg
     Py_DECREF(encoded_field);
     Py_DECREF(field);
   }
-  {  // items
-    PyObject * field = PyObject_GetAttrString(_pymsg, "items");
+  {  // items_json
+    PyObject * field = PyObject_GetAttrString(_pymsg, "items_json");
     if (!field) {
       return false;
     }
-    PyObject * seq_field = PySequence_Fast(field, "expected a sequence in 'items'");
-    if (!seq_field) {
+    assert(PyUnicode_Check(field));
+    PyObject * encoded_field = PyUnicode_AsUTF8String(field);
+    if (!encoded_field) {
       Py_DECREF(field);
       return false;
     }
-    Py_ssize_t size = PySequence_Size(field);
-    if (-1 == size) {
-      Py_DECREF(seq_field);
-      Py_DECREF(field);
-      return false;
-    }
-    if (!tors_interfaces__msg__OrderItem__Sequence__init(&(ros_message->items), size)) {
-      PyErr_SetString(PyExc_RuntimeError, "unable to create tors_interfaces__msg__OrderItem__Sequence ros_message");
-      Py_DECREF(seq_field);
-      Py_DECREF(field);
-      return false;
-    }
-    tors_interfaces__msg__OrderItem * dest = ros_message->items.data;
-    for (Py_ssize_t i = 0; i < size; ++i) {
-      if (!tors_interfaces__msg__order_item__convert_from_py(PySequence_Fast_GET_ITEM(seq_field, i), &dest[i])) {
-        Py_DECREF(seq_field);
-        Py_DECREF(field);
-        return false;
-      }
-    }
-    Py_DECREF(seq_field);
+    rosidl_runtime_c__String__assign(&ros_message->items_json, PyBytes_AS_STRING(encoded_field));
+    Py_DECREF(encoded_field);
     Py_DECREF(field);
   }
 
@@ -168,28 +142,17 @@ PyObject * tors_interfaces__srv__order_msg__request__convert_to_py(void * raw_ro
       }
     }
   }
-  {  // items
+  {  // items_json
     PyObject * field = NULL;
-    size_t size = ros_message->items.size;
-    field = PyList_New(size);
+    field = PyUnicode_DecodeUTF8(
+      ros_message->items_json.data,
+      strlen(ros_message->items_json.data),
+      "replace");
     if (!field) {
       return NULL;
     }
-    tors_interfaces__msg__OrderItem * item;
-    for (size_t i = 0; i < size; ++i) {
-      item = &(ros_message->items.data[i]);
-      PyObject * pyitem = tors_interfaces__msg__order_item__convert_to_py(item);
-      if (!pyitem) {
-        Py_DECREF(field);
-        return NULL;
-      }
-      int rc = PyList_SetItem(field, i, pyitem);
-      (void)rc;
-      assert(rc == 0);
-    }
-    assert(PySequence_Check(field));
     {
-      int rc = PyObject_SetAttrString(_pymessage, "items", field);
+      int rc = PyObject_SetAttrString(_pymessage, "items_json", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

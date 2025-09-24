@@ -12,7 +12,7 @@ from rclpy.executors import MultiThreadedExecutor
 from std_msgs.msg import Int32
 from std_srvs.srv import SetBool
 from tors_interfaces.srv import OrderMsg
-from tors_interfaces.msg import OrderItem
+import json
 
 class TableClientNode(Node):
     def __init__(self,
@@ -78,7 +78,11 @@ class RosWorker(QtCore.QThread):
         req = OrderMsg.Request()
         req.table_id = int(table_id)
         req.client_order_id = client_order_id
-        req.items = [OrderItem(name=k, quantity=int(v)) for k,v in items_dict.items() if int(v) > 0]
+        # JSON 문자열로 인코딩해서 전송
+        req.items_json = json.dumps(
+            {k:int(v) for k,v in items_dict.items() if int(v) > 0},
+            ensure_ascii=False
+        )
 
         self._safe_service(
             wait_fn=self.node.order_cli.wait_for_service,

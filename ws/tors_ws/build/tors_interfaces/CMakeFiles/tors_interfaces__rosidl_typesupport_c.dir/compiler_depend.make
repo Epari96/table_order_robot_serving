@@ -70,7 +70,6 @@ CMakeFiles/tors_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/tors_i
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__struct.h \
   rosidl_generator_c/tors_interfaces/srv/detail/order_msg__type_support.h \
   rosidl_generator_c/tors_interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/service_type_support_struct.h \

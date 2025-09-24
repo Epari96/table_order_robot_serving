@@ -453,12 +453,10 @@ CMakeFiles/tors_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport
   /usr/include/malloc.h \
   rosidl_generator_c/tors_interfaces/srv/detail/order_msg__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__struct.h \
   rosidl_generator_c/tors_interfaces/srv/detail/order_msg__functions.h \
   /usr/include/c++/11/stdlib.h \
   rosidl_generator_c/tors_interfaces/msg/rosidl_generator_c__visibility_control.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__functions.h \
   /opt/ros/humble/include/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp/service_type_support.h \
   /opt/ros/humble/include/rmw/rmw/types.h \
   /opt/ros/humble/include/rcutils/rcutils/logging.h \

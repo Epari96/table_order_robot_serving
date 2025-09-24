@@ -34,22 +34,10 @@ extern "C"
 {
 #endif
 
-#include "rosidl_runtime_c/string.h"  // client_order_id
-#include "rosidl_runtime_c/string_functions.h"  // client_order_id
-#include "tors_interfaces/msg/detail/order_item__functions.h"  // items
+#include "rosidl_runtime_c/string.h"  // client_order_id, items_json
+#include "rosidl_runtime_c/string_functions.h"  // client_order_id, items_json
 
 // forward declare type support functions
-size_t get_serialized_size_tors_interfaces__msg__OrderItem(
-  const void * untyped_ros_message,
-  size_t current_alignment);
-
-size_t max_serialized_size_tors_interfaces__msg__OrderItem(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-
-const rosidl_message_type_support_t *
-  ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(rosidl_typesupport_fastrtps_c, tors_interfaces, msg, OrderItem)();
 
 
 using _OrderMsg_Request__ros_msg_type = tors_interfaces__srv__OrderMsg_Request;
@@ -82,23 +70,18 @@ static bool _OrderMsg_Request__cdr_serialize(
     cdr << str->data;
   }
 
-  // Field name: items
+  // Field name: items_json
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tors_interfaces, msg, OrderItem
-      )()->data);
-    size_t size = ros_message->items.size;
-    auto array_ptr = ros_message->items.data;
-    cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; ++i) {
-      if (!callbacks->cdr_serialize(
-          &array_ptr[i], cdr))
-      {
-        return false;
-      }
+    const rosidl_runtime_c__String * str = &ros_message->items_json;
+    if (str->capacity == 0 || str->capacity <= str->size) {
+      fprintf(stderr, "string capacity not greater than size\n");
+      return false;
     }
+    if (str->data[str->size] != '\0') {
+      fprintf(stderr, "string not null-terminated\n");
+      return false;
+    }
+    cdr << str->data;
   }
 
   return true;
@@ -134,30 +117,19 @@ static bool _OrderMsg_Request__cdr_deserialize(
     }
   }
 
-  // Field name: items
+  // Field name: items_json
   {
-    const message_type_support_callbacks_t * callbacks =
-      static_cast<const message_type_support_callbacks_t *>(
-      ROSIDL_TYPESUPPORT_INTERFACE__MESSAGE_SYMBOL_NAME(
-        rosidl_typesupport_fastrtps_c, tors_interfaces, msg, OrderItem
-      )()->data);
-    uint32_t cdrSize;
-    cdr >> cdrSize;
-    size_t size = static_cast<size_t>(cdrSize);
-    if (ros_message->items.data) {
-      tors_interfaces__msg__OrderItem__Sequence__fini(&ros_message->items);
+    std::string tmp;
+    cdr >> tmp;
+    if (!ros_message->items_json.data) {
+      rosidl_runtime_c__String__init(&ros_message->items_json);
     }
-    if (!tors_interfaces__msg__OrderItem__Sequence__init(&ros_message->items, size)) {
-      fprintf(stderr, "failed to create array for field 'items'");
+    bool succeeded = rosidl_runtime_c__String__assign(
+      &ros_message->items_json,
+      tmp.c_str());
+    if (!succeeded) {
+      fprintf(stderr, "failed to assign string into field 'items_json'\n");
       return false;
-    }
-    auto array_ptr = ros_message->items.data;
-    for (size_t i = 0; i < size; ++i) {
-      if (!callbacks->cdr_deserialize(
-          cdr, &array_ptr[i]))
-      {
-        return false;
-      }
     }
   }
 
@@ -188,18 +160,10 @@ size_t get_serialized_size_tors_interfaces__srv__OrderMsg_Request(
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message->client_order_id.size + 1);
-  // field.name items
-  {
-    size_t array_size = ros_message->items.size;
-    auto array_ptr = ros_message->items.data;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment += get_serialized_size_tors_interfaces__msg__OrderItem(
-        &array_ptr[index], current_alignment);
-    }
-  }
+  // field.name items_json
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message->items_json.size + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -249,27 +213,16 @@ size_t max_serialized_size_tors_interfaces__srv__OrderMsg_Request(
         1;
     }
   }
-  // member: items
+  // member: items_json
   {
-    size_t array_size = 0;
+    size_t array_size = 1;
+
     full_bounded = false;
     is_plain = false;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-
-    last_member_size = 0;
     for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size;
-      inner_size =
-        max_serialized_size_tors_interfaces__msg__OrderItem(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
     }
   }
 
@@ -281,7 +234,7 @@ size_t max_serialized_size_tors_interfaces__srv__OrderMsg_Request(
     using DataType = tors_interfaces__srv__OrderMsg_Request;
     is_plain =
       (
-      offsetof(DataType, items) +
+      offsetof(DataType, items_json) +
       last_member_size
       ) == ret_val;
   }

@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing dummy_nav2.egg-info/PKG-INFO
+writing dependency_links to dummy_nav2.egg-info/dependency_links.txt
+writing entry points to dummy_nav2.egg-info/entry_points.txt
+writing requirements to dummy_nav2.egg-info/requires.txt
+writing top-level names to dummy_nav2.egg-info/top_level.txt
+reading manifest file 'dummy_nav2.egg-info/SOURCES.txt'
+writing manifest file 'dummy_nav2.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspace/tors_ws/install/dummy_nav2/lib/python3.10/site-packages/dummy-nav2.egg-link (link to .)
+Installing dummy_nav2_server script to /workspace/tors_ws/install/dummy_nav2/lib/dummy_nav2
+
+Installed /workspace/tors_ws/build/dummy_nav2
+running symlink_data
