@@ -25,10 +25,11 @@ CALL_WAITER_TOPIC  = "/pos/call_waiter"        # Int32(table_no)
 CONFIRM_RECEIPT_SERVICE = "/pos/confirm_receipt" # SetBool
 
 NAV_POINTS = {
-    "tables": { 1:(1.0,2.0,0.0), 2:(2.0,2.0,0.0), 3:(3.0,2.0,0.0),
-                4:(1.0,3.0,math.pi/2), 5:(2.0,3.0,math.pi/2), 6:(3.0,3.0,math.pi/2) },
-    "call":   (0.0, 0.0, 0.0),
-    "charge": (-1.0, -1.0, 0.0),
+    "tables": { 1:(-3.5,-2.5,-1.57), 2:(-3.5,2.5,1.57), 
+                3:(-1.5,-2.5,-1.57), 4:(-1.5,2.5,1.57),
+                5:(0.5,-2.5,-1.57), 6:(0.5,2.5,1.57)},
+    "call":   (3.5, -0.5, 3.14),
+    "charge": (4.5, -3.5, 1.57),
 }
 
 def yaw_to_quat(yaw: float):
@@ -131,16 +132,8 @@ class RosWorker(QtCore.QThread):
 
     def _on_order_service(self, req: OrderMsg.Request, res: OrderMsg.Response):
         import threading
-        # req.table_id: int, req.items: OrderItem[]
-        try:
-            items_dict = {getattr(it, 'name',''): int(getattr(it, 'quantity',0))
-                          for it in req.items if getattr(it,'name','')}
-        except Exception:
-            items_dict = {}
-            for it in getattr(req, 'items', []):
-                n = getattr(it,'name',''); q = getattr(it,'quantity',0)
-                if n: items_dict[n] = int(q) if isinstance(q,(int,float)) else 0
-        items_json = json.dumps(items_dict, ensure_ascii=False)
+        # req.items_json 사용
+        items_json = getattr(req, 'items_json', '')
 
         ev = threading.Event(); holder = {"accepted": False}
         self._pending_order[req.client_order_id] = (ev, holder)

@@ -134,20 +134,11 @@ CMakeFiles/tors_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesu
   rosidl_generator_c/tors_interfaces/srv/detail/order_msg__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/primitives_sequence.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__struct.h \
   /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/string_functions.h \
-  rosidl_generator_c/tors_interfaces/msg/order_item.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__functions.h \
-  rosidl_generator_c/tors_interfaces/msg/detail/order_item__type_support.h \
-  rosidl_typesupport_introspection_c/tors_interfaces/msg/detail/order_item__rosidl_typesupport_introspection_c.h \
   /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h
 
 
 /opt/ros/humble/include/rosidl_typesupport_introspection_c/rosidl_typesupport_introspection_c/service_introspection.h:
-
-rosidl_generator_c/tors_interfaces/msg/detail/order_item__type_support.h:
-
-rosidl_generator_c/tors_interfaces/msg/order_item.h:
 
 rosidl_generator_c/tors_interfaces/srv/detail/order_msg__functions.h:
 

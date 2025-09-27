@@ -15,10 +15,6 @@
 #include "rosidl_runtime_cpp/message_initialization.hpp"
 
 
-// Include directives for member types
-// Member 'items'
-#include "tors_interfaces/msg/detail/order_item__struct.hpp"
-
 #ifndef _WIN32
 # define DEPRECATED__tors_interfaces__srv__OrderMsg_Request __attribute__((deprecated))
 #else
@@ -44,17 +40,20 @@ struct OrderMsg_Request_
     {
       this->table_id = 0l;
       this->client_order_id = "";
+      this->items_json = "";
     }
   }
 
   explicit OrderMsg_Request_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
-  : client_order_id(_alloc)
+  : client_order_id(_alloc),
+    items_json(_alloc)
   {
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->table_id = 0l;
       this->client_order_id = "";
+      this->items_json = "";
     }
   }
 
@@ -65,9 +64,9 @@ struct OrderMsg_Request_
   using _client_order_id_type =
     std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
   _client_order_id_type client_order_id;
-  using _items_type =
-    std::vector<tors_interfaces::msg::OrderItem_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<tors_interfaces::msg::OrderItem_<ContainerAllocator>>>;
-  _items_type items;
+  using _items_json_type =
+    std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>;
+  _items_json_type items_json;
 
   // setters for named parameter idiom
   Type & set__table_id(
@@ -82,10 +81,10 @@ struct OrderMsg_Request_
     this->client_order_id = _arg;
     return *this;
   }
-  Type & set__items(
-    const std::vector<tors_interfaces::msg::OrderItem_<ContainerAllocator>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<tors_interfaces::msg::OrderItem_<ContainerAllocator>>> & _arg)
+  Type & set__items_json(
+    const std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> & _arg)
   {
-    this->items = _arg;
+    this->items_json = _arg;
     return *this;
   }
 
@@ -137,7 +136,7 @@ struct OrderMsg_Request_
     if (this->client_order_id != other.client_order_id) {
       return false;
     }
-    if (this->items != other.items) {
+    if (this->items_json != other.items_json) {
       return false;
     }
     return true;

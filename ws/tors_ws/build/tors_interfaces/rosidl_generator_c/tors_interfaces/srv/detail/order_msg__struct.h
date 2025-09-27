@@ -19,16 +19,15 @@ extern "C"
 
 // Include directives for member types
 // Member 'client_order_id'
+// Member 'items_json'
 #include "rosidl_runtime_c/string.h"
-// Member 'items'
-#include "tors_interfaces/msg/detail/order_item__struct.h"
 
 /// Struct defined in srv/OrderMsg in the package tors_interfaces.
 typedef struct tors_interfaces__srv__OrderMsg_Request
 {
   int32_t table_id;
   rosidl_runtime_c__String client_order_id;
-  tors_interfaces__msg__OrderItem__Sequence items;
+  rosidl_runtime_c__String items_json;
 } tors_interfaces__srv__OrderMsg_Request;
 
 // Struct for a sequence of tors_interfaces__srv__OrderMsg_Request.

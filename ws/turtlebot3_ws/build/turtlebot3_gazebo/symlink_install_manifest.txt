@@ -1,5 +1,6 @@
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/lib/turtlebot3_gazebo/turtlebot3_drive
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/empty_world.launch.py
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/restaurant.launch.py
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/robot_state_publisher.launch.py
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/spawn_turtlebot3.launch.py
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage1.launch.py
@@ -8,6 +9,15 @@
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage4.launch.py
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_house.launch.py
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_world.launch.py
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table.dae
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/materials/textures/Maple.jpg
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/materials/textures/Wood_Floor_Dark.jpg
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/meshes/cafe_table.dae
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/model-1_4.sdf
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/model.config
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/cafe_table/model.sdf
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/my_stool/model.config
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/my_stool/model.sdf
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model-1_4.sdf
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.config
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.sdf
@@ -53,6 +63,7 @@
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle.urdf
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
+/workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/restaurant.world
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world
 /workspace/turtlebot3_ws/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage3.world

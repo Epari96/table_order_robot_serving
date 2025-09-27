@@ -1,0 +1,68 @@
+[0.016s] Invoking command in '/workspace/turtlebot3_ws/build/turtlebot3_node': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake /workspace/turtlebot3_ws/src/turtlebot3/turtlebot3_node -DCMAKE_INSTALL_PREFIX=/workspace/turtlebot3_ws/install/turtlebot3_node
+[0.197s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.197s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.197s] -- Found dynamixel_sdk: 3.8.4 (/opt/ros/humble/share/dynamixel_sdk/cmake)
+[0.198s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.198s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.198s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.198s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.198s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.198s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.215s] -- Found message_filters: 4.3.8 (/opt/ros/humble/share/message_filters/cmake)
+[0.236s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.237s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.343s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.373s] -- Found nav_msgs: 4.9.0 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.386s] -- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.399s] -- Found std_srvs: 4.9.0 (/opt/ros/humble/share/std_srvs/cmake)
+[0.406s] -- Found tf2: 0.25.15 (/opt/ros/humble/share/tf2/cmake)
+[0.409s] -- Found tf2_ros: 0.25.15 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.466s] -- Found turtlebot3_msgs: 2.2.3 (/workspace/turtlebot3_ws/install/turtlebot3_msgs/share/turtlebot3_msgs/cmake)
+[0.557s] -- Configuring done
+[0.573s] -- Generating done
+[0.577s] -- Build files have been written to: /workspace/turtlebot3_ws/build/turtlebot3_node
+[0.583s] Invoked command in '/workspace/turtlebot3_ws/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake /workspace/turtlebot3_ws/src/turtlebot3/turtlebot3_node -DCMAKE_INSTALL_PREFIX=/workspace/turtlebot3_ws/install/turtlebot3_node
+[0.585s] Invoking command in '/workspace/turtlebot3_ws/build/turtlebot3_node': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /workspace/turtlebot3_ws/build/turtlebot3_node -- -j20 -l20
+[0.637s] [35m[1mConsolidate compiler generated dependencies of target turtlebot3_node_lib[0m
+[0.670s] [  7%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/sound.cpp.o[0m
+[0.670s] [ 21%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/dynamixel_sdk_wrapper.cpp.o[0m
+[0.670s] [ 28%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/motor_power.cpp.o[0m
+[0.670s] [ 35%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/odometry.cpp.o[0m
+[0.671s] [ 35%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/diff_drive_controller.cpp.o[0m
+[0.672s] [ 42%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/devices/reset.cpp.o[0m
+[0.673s] [ 50%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/imu.cpp.o[0m
+[0.674s] [ 57%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/sensor_state.cpp.o[0m
+[0.674s] [ 64%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/turtlebot3.cpp.o[0m
+[0.674s] [ 71%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/battery_state.cpp.o[0m
+[0.675s] [ 78%] [32mBuilding CXX object CMakeFiles/turtlebot3_node_lib.dir/src/sensors/joint_state.cpp.o[0m
+[13.348s] [ 85%] [32m[1mLinking CXX static library libturtlebot3_node_lib.a[0m
+[13.685s] [ 85%] Built target turtlebot3_node_lib
+[13.693s] [35m[1mConsolidate compiler generated dependencies of target turtlebot3_ros[0m
+[13.710s] [ 92%] [32mBuilding CXX object CMakeFiles/turtlebot3_ros.dir/src/node_main.cpp.o[0m
+[15.858s] [100%] [32m[1mLinking CXX executable turtlebot3_ros[0m
+[16.986s] [100%] Built target turtlebot3_ros
+[16.994s] Invoked command in '/workspace/turtlebot3_ws/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --build /workspace/turtlebot3_ws/build/turtlebot3_node -- -j20 -l20
+[16.996s] Invoking command in '/workspace/turtlebot3_ws/build/turtlebot3_node': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /workspace/turtlebot3_ws/build/turtlebot3_node
+[17.002s] -- Install configuration: ""
+[17.002s] -- Execute custom install script
+[17.002s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/param/burger.yaml
+[17.002s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/param/waffle.yaml
+[17.002s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/param/waffle_pi.yaml
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/lib/turtlebot3_node/turtlebot3_ros
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/ament_index/resource_index/package_run_dependencies/turtlebot3_node
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/ament_index/resource_index/parent_prefix_path/turtlebot3_node
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/environment/ament_prefix_path.sh
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/environment/ament_prefix_path.dsv
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/environment/path.sh
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/environment/path.dsv
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/local_setup.bash
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/local_setup.sh
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/local_setup.zsh
+[17.003s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/local_setup.dsv
+[17.003s] -- Symlinking: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/package.dsv
+[17.009s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/ament_index/resource_index/packages/turtlebot3_node
+[17.009s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/cmake/ament_cmake_export_include_directories-extras.cmake
+[17.009s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/cmake/turtlebot3_nodeConfig.cmake
+[17.009s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/cmake/turtlebot3_nodeConfig-version.cmake
+[17.009s] -- Up-to-date symlink: /workspace/turtlebot3_ws/install/turtlebot3_node/share/turtlebot3_node/package.xml
+[17.011s] Invoked command in '/workspace/turtlebot3_ws/build/turtlebot3_node' returned '0': CMAKE_PREFIX_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs:/workspace/turtlebot3_ws/install/turtlebot3:/workspace/turtlebot3_ws/install/turtlebot3_simulations:/workspace/turtlebot3_ws/install/turtlebot3_bringup:/workspace/turtlebot3_ws/install/turtlebot3_node:/workspace/turtlebot3_ws/install/turtlebot3_navigation2:/workspace/turtlebot3_ws/install/turtlebot3_fake_node:/workspace/turtlebot3_ws/install/turtlebot3_gazebo:/workspace/turtlebot3_ws/install/turtlebot3_description:/workspace/turtlebot3_ws/install/turtlebot3_cartographer:/workspace/turtlebot3_ws/install/turtlebot3_teleop:/workspace/turtlebot3_ws/install/turtlebot3_example:/opt/ros/humble LD_LIBRARY_PATH=/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins /usr/bin/cmake --install /workspace/turtlebot3_ws/build/turtlebot3_node

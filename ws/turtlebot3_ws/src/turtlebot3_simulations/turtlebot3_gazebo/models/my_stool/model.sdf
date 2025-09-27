@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="my_stool">
+    <static>true</static>
+
+    <link name="stool">
+      <!-- 좌판 -->
+      <collision name="seat_col">
+        <pose>0 0 0.48 0 0 0</pose>
+        <geometry><cylinder><radius>0.16</radius><length>0.04</length></cylinder></geometry>
+      </collision>
+      <visual name="seat_vis">
+        <pose>0 0 0.48 0 0 0</pose>
+        <geometry><cylinder><radius>0.16</radius><length>0.04</length></cylinder></geometry>
+      </visual>
+
+      <!-- 다리 4개 -->
+      <!-- leg1 -->
+      <collision name="leg1_col">
+        <pose> 0.12  0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </collision>
+      <visual name="leg1_vis">
+        <pose> 0.12  0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </visual>
+
+      <!-- leg2 -->
+      <collision name="leg2_col">
+        <pose>-0.12  0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </collision>
+      <visual name="leg2_vis">
+        <pose>-0.12  0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </visual>
+
+      <!-- leg3 -->
+      <collision name="leg3_col">
+        <pose> 0.12 -0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </collision>
+      <visual name="leg3_vis">
+        <pose> 0.12 -0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </visual>
+
+      <!-- leg4 -->
+      <collision name="leg4_col">
+        <pose>-0.12 -0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </collision>
+      <visual name="leg4_vis">
+        <pose>-0.12 -0.12 0.24 0 0 0</pose>
+        <geometry><cylinder><radius>0.015</radius><length>0.48</length></cylinder></geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

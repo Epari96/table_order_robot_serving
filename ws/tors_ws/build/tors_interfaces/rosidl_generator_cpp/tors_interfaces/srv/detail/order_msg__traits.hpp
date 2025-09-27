@@ -14,10 +14,6 @@
 #include "tors_interfaces/srv/detail/order_msg__struct.hpp"
 #include "rosidl_runtime_cpp/traits.hpp"
 
-// Include directives for member types
-// Member 'items'
-#include "tors_interfaces/msg/detail/order_item__traits.hpp"
-
 namespace tors_interfaces
 {
 
@@ -43,21 +39,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: items
+  // member: items_json
   {
-    if (msg.items.size() == 0) {
-      out << "items: []";
-    } else {
-      out << "items: [";
-      size_t pending_items = msg.items.size();
-      for (auto item : msg.items) {
-        to_flow_style_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
+    out << "items_json: ";
+    rosidl_generator_traits::value_to_yaml(msg.items_json, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -86,23 +71,14 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: items
+  // member: items_json
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.items.size() == 0) {
-      out << "items: []\n";
-    } else {
-      out << "items:\n";
-      for (auto item : msg.items) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "-\n";
-        to_block_style_yaml(item, out, indentation + 2);
-      }
-    }
+    out << "items_json: ";
+    rosidl_generator_traits::value_to_yaml(msg.items_json, out);
+    out << "\n";
   }
 }  // NOLINT(readability/fn_size)
 

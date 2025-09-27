@@ -160,7 +160,6 @@ CMakeFiles/tors_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/to
  /usr/include/c++/11/stdexcept \
  /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/message_initialization.hpp \
  /opt/ros/humble/include/rosidl_runtime_c/rosidl_runtime_c/message_initialization.h \
- /workspace/tors_ws/build/tors_interfaces/rosidl_generator_cpp/tors_interfaces/msg/detail/order_item__struct.hpp \
  /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/identifier.hpp \
  /opt/ros/humble/include/rosidl_typesupport_cpp/rosidl_typesupport_cpp/visibility_control.h \
  /opt/ros/humble/include/rosidl_runtime_cpp/rosidl_typesupport_cpp/message_type_support.hpp \

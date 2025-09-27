@@ -16,30 +16,6 @@
 
 
 // forward declaration of message dependencies and their conversion functions
-namespace tors_interfaces
-{
-namespace msg
-{
-namespace typesupport_fastrtps_cpp
-{
-bool cdr_serialize(
-  const tors_interfaces::msg::OrderItem &,
-  eprosima::fastcdr::Cdr &);
-bool cdr_deserialize(
-  eprosima::fastcdr::Cdr &,
-  tors_interfaces::msg::OrderItem &);
-size_t get_serialized_size(
-  const tors_interfaces::msg::OrderItem &,
-  size_t current_alignment);
-size_t
-max_serialized_size_OrderItem(
-  bool & full_bounded,
-  bool & is_plain,
-  size_t current_alignment);
-}  // namespace typesupport_fastrtps_cpp
-}  // namespace msg
-}  // namespace tors_interfaces
-
 
 namespace tors_interfaces
 {
@@ -60,16 +36,8 @@ cdr_serialize(
   cdr << ros_message.table_id;
   // Member: client_order_id
   cdr << ros_message.client_order_id;
-  // Member: items
-  {
-    size_t size = ros_message.items.size();
-    cdr << static_cast<uint32_t>(size);
-    for (size_t i = 0; i < size; i++) {
-      tors_interfaces::msg::typesupport_fastrtps_cpp::cdr_serialize(
-        ros_message.items[i],
-        cdr);
-    }
-  }
+  // Member: items_json
+  cdr << ros_message.items_json;
   return true;
 }
 
@@ -85,17 +53,8 @@ cdr_deserialize(
   // Member: client_order_id
   cdr >> ros_message.client_order_id;
 
-  // Member: items
-  {
-    uint32_t cdrSize;
-    cdr >> cdrSize;
-    size_t size = static_cast<size_t>(cdrSize);
-    ros_message.items.resize(size);
-    for (size_t i = 0; i < size; i++) {
-      tors_interfaces::msg::typesupport_fastrtps_cpp::cdr_deserialize(
-        cdr, ros_message.items[i]);
-    }
-  }
+  // Member: items_json
+  cdr >> ros_message.items_json;
 
   return true;
 }
@@ -123,19 +82,10 @@ get_serialized_size(
   current_alignment += padding +
     eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
     (ros_message.client_order_id.size() + 1);
-  // Member: items
-  {
-    size_t array_size = ros_message.items.size();
-
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-    for (size_t index = 0; index < array_size; ++index) {
-      current_alignment +=
-        tors_interfaces::msg::typesupport_fastrtps_cpp::get_serialized_size(
-        ros_message.items[index], current_alignment);
-    }
-  }
+  // Member: items_json
+  current_alignment += padding +
+    eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+    (ros_message.items_json.size() + 1);
 
   return current_alignment - initial_alignment;
 }
@@ -182,26 +132,16 @@ max_serialized_size_OrderMsg_Request(
     }
   }
 
-  // Member: items
+  // Member: items_json
   {
-    size_t array_size = 0;
+    size_t array_size = 1;
+
     full_bounded = false;
     is_plain = false;
-    current_alignment += padding +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
-
-
-    last_member_size = 0;
     for (size_t index = 0; index < array_size; ++index) {
-      bool inner_full_bounded;
-      bool inner_is_plain;
-      size_t inner_size =
-        tors_interfaces::msg::typesupport_fastrtps_cpp::max_serialized_size_OrderItem(
-        inner_full_bounded, inner_is_plain, current_alignment);
-      last_member_size += inner_size;
-      current_alignment += inner_size;
-      full_bounded &= inner_full_bounded;
-      is_plain &= inner_is_plain;
+      current_alignment += padding +
+        eprosima::fastcdr::Cdr::alignment(current_alignment, padding) +
+        1;
     }
   }
 
@@ -213,7 +153,7 @@ max_serialized_size_OrderMsg_Request(
     using DataType = tors_interfaces::srv::OrderMsg_Request;
     is_plain =
       (
-      offsetof(DataType, items) +
+      offsetof(DataType, items_json) +
       last_member_size
       ) == ret_val;
   }
