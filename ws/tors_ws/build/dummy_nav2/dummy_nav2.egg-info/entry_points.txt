@@ -1,0 +1,3 @@
+[console_scripts]
+dummy_nav2_server = dummy_nav2.dummy_nav2_server:main
+

@@ -1,0 +1,7 @@
+{
+  "package_name": "tors_interfaces",
+  "non_idl_tuples": [
+    "/workspace/tors_ws/src/tors_interfaces:msg/OrderItem.msg",
+    "/workspace/tors_ws/src/tors_interfaces:srv/OrderMsg.srv"
+  ]
+}

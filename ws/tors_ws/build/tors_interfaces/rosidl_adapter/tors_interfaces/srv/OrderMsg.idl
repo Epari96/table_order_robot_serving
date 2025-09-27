@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from tors_interfaces/srv/OrderMsg.srv
+// generated code does not contain a copyright notice
+
+
+module tors_interfaces {
+  module srv {
+    @verbatim (language="comment", text=
+      "Request")
+    struct OrderMsg_Request {
+      int32 table_id;
+
+      string client_order_id;
+
+      string items_json;
+    };
+    @verbatim (language="comment", text=
+      "Response")
+    struct OrderMsg_Response {
+      boolean accepted;
+
+      string message;
+    };
+  };
+};

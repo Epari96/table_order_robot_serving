@@ -1,0 +1,19 @@
+services:
+  ros2-gui:
+    image: ros-humble-tors:v0.05
+    container_name: ros2_gui_tors
+    user: "${UID:-1000}:${GID:-1000}"
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ./ws:/workspace
+    network_mode: host
+    stdin_open: true
+    tty: true
+    # 과다한 권한(거의 모든 호스트 권한을 부여)으로 실행하지 않도록 주석 처리
+    # privileged: true
+    devices:
+      - /dev/dri:/dev/dri
+    restart: no

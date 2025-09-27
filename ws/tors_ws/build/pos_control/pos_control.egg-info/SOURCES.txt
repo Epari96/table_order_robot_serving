@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+pos_control/__init__.py
+pos_control/pos_control.py
+pos_control/pos_gui_widget.py
+pos_control.egg-info/PKG-INFO
+pos_control.egg-info/SOURCES.txt
+pos_control.egg-info/dependency_links.txt
+pos_control.egg-info/entry_points.txt
+pos_control.egg-info/requires.txt
+pos_control.egg-info/top_level.txt
+pos_control.egg-info/zip-safe
+resource/PosControl.ui
+resource/pos_control

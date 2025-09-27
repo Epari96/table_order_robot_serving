@@ -1,0 +1,30 @@
+[0.538s] Invoking command in '/workspace/tors_ws/build/table_order': LD_LIBRARY_PATH=/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/workspace/tors_ws/build/table_order/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/table_order/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/table_order/build --no-deps symlink_data
+[0.702s] running develop
+[0.780s] running egg_info
+[0.780s] creating table_order.egg-info
+[0.780s] writing table_order.egg-info/PKG-INFO
+[0.780s] writing dependency_links to table_order.egg-info/dependency_links.txt
+[0.780s] writing entry points to table_order.egg-info/entry_points.txt
+[0.780s] writing requirements to table_order.egg-info/requires.txt
+[0.780s] writing top-level names to table_order.egg-info/top_level.txt
+[0.780s] writing manifest file 'table_order.egg-info/SOURCES.txt'
+[0.781s] reading manifest file 'table_order.egg-info/SOURCES.txt'
+[0.782s] writing manifest file 'table_order.egg-info/SOURCES.txt'
+[0.783s] running build_ext
+[0.783s] Creating /workspace/tors_ws/install/table_order/lib/python3.10/site-packages/table-order.egg-link (link to .)
+[0.783s] Installing table_gui script to /workspace/tors_ws/install/table_order/lib/table_order
+[0.783s] 
+[0.783s] Installed /workspace/tors_ws/build/table_order
+[0.783s] running symlink_data
+[0.783s] creating /workspace/tors_ws/install/table_order/share/ament_index
+[0.783s] creating /workspace/tors_ws/install/table_order/share/ament_index/resource_index
+[0.783s] creating /workspace/tors_ws/install/table_order/share/ament_index/resource_index/packages
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/table_order -> /workspace/tors_ws/install/table_order/share/ament_index/resource_index/packages
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/package.xml -> /workspace/tors_ws/install/table_order/share/table_order
+[0.784s] creating /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/TableOrder.ui -> /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/짜장면.jpg -> /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/짬뽕.jpg -> /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/탕수육.jpg -> /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.784s] symbolically linking /workspace/tors_ws/build/table_order/resource/제로 콜라.jpg -> /workspace/tors_ws/install/table_order/share/table_order/resource
+[0.802s] Invoked command in '/workspace/tors_ws/build/table_order' returned '0': LD_LIBRARY_PATH=/workspace/tors_ws/install/tors_interfaces/lib:/workspace/turtlebot3_ws/install/turtlebot3_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/workspace/tors_ws/build/table_order/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/table_order/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/table_order/build --no-deps symlink_data

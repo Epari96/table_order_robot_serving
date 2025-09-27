@@ -1,0 +1,4 @@
+# Request
+int32 table_id
+string client_order_id
+string items_json

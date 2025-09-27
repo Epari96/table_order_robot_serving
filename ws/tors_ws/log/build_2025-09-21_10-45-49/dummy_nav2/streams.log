@@ -1,0 +1,24 @@
+[0.324s] Invoking command in '/workspace/tors_ws/build/dummy_nav2': PYTHONPATH=/workspace/tors_ws/build/dummy_nav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/dummy_nav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/dummy_nav2/build --no-deps symlink_data
+[0.460s] running develop
+[0.525s] running egg_info
+[0.525s] creating dummy_nav2.egg-info
+[0.525s] writing dummy_nav2.egg-info/PKG-INFO
+[0.525s] writing dependency_links to dummy_nav2.egg-info/dependency_links.txt
+[0.525s] writing entry points to dummy_nav2.egg-info/entry_points.txt
+[0.525s] writing requirements to dummy_nav2.egg-info/requires.txt
+[0.525s] writing top-level names to dummy_nav2.egg-info/top_level.txt
+[0.525s] writing manifest file 'dummy_nav2.egg-info/SOURCES.txt'
+[0.526s] reading manifest file 'dummy_nav2.egg-info/SOURCES.txt'
+[0.526s] writing manifest file 'dummy_nav2.egg-info/SOURCES.txt'
+[0.527s] running build_ext
+[0.527s] Creating /workspace/tors_ws/install/dummy_nav2/lib/python3.10/site-packages/dummy-nav2.egg-link (link to .)
+[0.528s] Installing dummy_nav2_server script to /workspace/tors_ws/install/dummy_nav2/lib/dummy_nav2
+[0.528s] 
+[0.528s] Installed /workspace/tors_ws/build/dummy_nav2
+[0.528s] running symlink_data
+[0.528s] creating /workspace/tors_ws/install/dummy_nav2/share/ament_index
+[0.528s] creating /workspace/tors_ws/install/dummy_nav2/share/ament_index/resource_index
+[0.528s] creating /workspace/tors_ws/install/dummy_nav2/share/ament_index/resource_index/packages
+[0.528s] symbolically linking /workspace/tors_ws/build/dummy_nav2/resource/dummy_nav2 -> /workspace/tors_ws/install/dummy_nav2/share/ament_index/resource_index/packages
+[0.528s] symbolically linking /workspace/tors_ws/build/dummy_nav2/package.xml -> /workspace/tors_ws/install/dummy_nav2/share/dummy_nav2
+[0.542s] Invoked command in '/workspace/tors_ws/build/dummy_nav2' returned '0': PYTHONPATH=/workspace/tors_ws/build/dummy_nav2/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/tors_ws/install/dummy_nav2/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/tors_ws/build/dummy_nav2/build --no-deps symlink_data
