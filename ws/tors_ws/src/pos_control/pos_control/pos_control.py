@@ -25,10 +25,11 @@ CALL_WAITER_TOPIC  = "/pos/call_waiter"        # Int32(table_no)
 CONFIRM_RECEIPT_SERVICE = "/pos/confirm_receipt" # SetBool
 
 NAV_POINTS = {
-    "tables": { 1:(1.0,2.0,0.0), 2:(2.0,2.0,0.0), 3:(3.0,2.0,0.0),
-                4:(1.0,3.0,math.pi/2), 5:(2.0,3.0,math.pi/2), 6:(3.0,3.0,math.pi/2) },
-    "call":   (0.0, 0.0, 0.0),
-    "charge": (-1.0, -1.0, 0.0),
+    "tables": { 1:(-3.5,-2.5,-1.57), 2:(-3.5,2.5,1.57), 
+                3:(-1.5,-2.5,-1.57), 4:(-1.5,2.5,1.57),
+                5:(0.5,-2.5,-1.57), 6:(0.5,2.5,1.57)},
+    "call":   (3.5, -0.5, 3.14),
+    "charge": (4.5, -3.5, 1.57),
 }
 
 def yaw_to_quat(yaw: float):
